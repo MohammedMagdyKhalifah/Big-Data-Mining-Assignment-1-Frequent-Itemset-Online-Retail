@@ -1,0 +1,6 @@
+k,candidates_generated,candidates_pruned,candidates_counted,frequent_itemsets,seconds
+1,3749,0,3749,824,0.0175
+2,339076,0,339076,902,1.3228
+3,5795,2770,3025,261,0.215
+4,284,165,119,25,0.0237
+5,5,4,1,1,0.0093

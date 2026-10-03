@@ -1,0 +1,124 @@
+{
+  "min_support": 0.01,
+  "min_count": 198,
+  "n_items": 3749,
+  "levels": [
+    {
+      "k": 1,
+      "brute_force_itemsets": 3749,
+      "generated_by_join": 3749,
+      "pruned_by_subset_check": 0,
+      "counted_after_pruning": 3749,
+      "frequent": 824,
+      "pruned_pct_of_join": 0.0,
+      "counted_pct_of_brute_force": "100.00%",
+      "seconds": 0.017
+    },
+    {
+      "k": 2,
+      "brute_force_itemsets": 7025626,
+      "generated_by_join": 339076,
+      "pruned_by_subset_check": 0,
+      "counted_after_pruning": 339076,
+      "frequent": 902,
+      "pruned_pct_of_join": 0.0,
+      "counted_pct_of_brute_force": "4.83%",
+      "seconds": 1.323
+    },
+    {
+      "k": 3,
+      "brute_force_itemsets": 8775006874,
+      "generated_by_join": 5795,
+      "pruned_by_subset_check": 2770,
+      "counted_after_pruning": 3025,
+      "frequent": 261,
+      "pruned_pct_of_join": 47.8,
+      "counted_pct_of_brute_force": "3.4e-05%",
+      "seconds": 0.215
+    },
+    {
+      "k": 4,
+      "brute_force_itemsets": 8217793937501,
+      "generated_by_join": 284,
+      "pruned_by_subset_check": 165,
+      "counted_after_pruning": 119,
+      "frequent": 25,
+      "pruned_pct_of_join": 58.1,
+      "counted_pct_of_brute_force": "1.4e-09%",
+      "seconds": 0.024
+    },
+    {
+      "k": 5,
+      "brute_force_itemsets": 6155127659188249,
+      "generated_by_join": 5,
+      "pruned_by_subset_check": 4,
+      "counted_after_pruning": 1,
+      "frequent": 1,
+      "pruned_pct_of_join": 80.0,
+      "counted_pct_of_brute_force": "1.6e-14%",
+      "seconds": 0.009
+    }
+  ],
+  "examples": [
+    {
+      "candidate": [
+        "6 RIBBONS RUSTIC CHARM",
+        "JAM MAKING SET PRINTED",
+        "SCANDINAVIAN REDS RIBBONS"
+      ],
+      "infrequent_subset": [
+        "JAM MAKING SET PRINTED",
+        "SCANDINAVIAN REDS RIBBONS"
+      ],
+      "infrequent_subset_count": 138
+    },
+    {
+      "candidate": [
+        "6 RIBBONS RUSTIC CHARM",
+        "JAM MAKING SET WITH JARS",
+        "SCANDINAVIAN REDS RIBBONS"
+      ],
+      "infrequent_subset": [
+        "JAM MAKING SET WITH JARS",
+        "SCANDINAVIAN REDS RIBBONS"
+      ],
+      "infrequent_subset_count": 114
+    },
+    {
+      "candidate": [
+        "6 RIBBONS RUSTIC CHARM",
+        "JUMBO BAG RED RETROSPOT",
+        "SCANDINAVIAN REDS RIBBONS"
+      ],
+      "infrequent_subset": [
+        "JUMBO BAG RED RETROSPOT",
+        "SCANDINAVIAN REDS RIBBONS"
+      ],
+      "infrequent_subset_count": 134
+    },
+    {
+      "candidate": [
+        "6 RIBBONS RUSTIC CHARM",
+        "NATURAL SLATE HEART CHALKBOARD",
+        "SCANDINAVIAN REDS RIBBONS"
+      ],
+      "infrequent_subset": [
+        "NATURAL SLATE HEART CHALKBOARD",
+        "SCANDINAVIAN REDS RIBBONS"
+      ],
+      "infrequent_subset_count": 108
+    },
+    {
+      "candidate": [
+        "6 RIBBONS RUSTIC CHARM",
+        "PACK OF 72 RETROSPOT CAKE CASES",
+        "SCANDINAVIAN REDS RIBBONS"
+      ],
+      "infrequent_subset": [
+        "PACK OF 72 RETROSPOT CAKE CASES",
+        "SCANDINAVIAN REDS RIBBONS"
+      ],
+      "infrequent_subset_count": 106
+    }
+  ]
+}

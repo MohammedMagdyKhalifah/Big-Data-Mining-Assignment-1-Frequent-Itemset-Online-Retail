@@ -1,0 +1,21 @@
+Experiment 1: minimum support
+  support 0.0050: {'min_support': 0.005, 'min_support_count': 99, 'frequent_1': 1544, 'frequent_2': 8191, 'frequent_3plus': 7500, 'total_frequent': 17235, 'largest_itemset': 6, 'candidates_generated': 1455977, 'candidates_pruned': 145389, 'candidates_counted': 1310588, 'seconds': 8.514}
+  support 0.0075: {'min_support': 0.0075, 'min_support_count': 149, 'frequent_1': 1091, 'frequent_2': 2290, 'frequent_3plus': 1137, 'total_frequent': 4518, 'largest_itemset': 6, 'candidates_generated': 624709, 'candidates_pruned': 14725, 'candidates_counted': 609984, 'seconds': 3.111}
+  support 0.0100: {'min_support': 0.01, 'min_support_count': 198, 'frequent_1': 824, 'frequent_2': 902, 'frequent_3plus': 287, 'total_frequent': 2013, 'largest_itemset': 5, 'candidates_generated': 345160, 'candidates_pruned': 2939, 'candidates_counted': 342221, 'seconds': 1.72}
+  support 0.0150: {'min_support': 0.015, 'min_support_count': 297, 'frequent_1': 479, 'frequent_2': 240, 'frequent_3plus': 39, 'total_frequent': 758, 'largest_itemset': 4, 'candidates_generated': 115263, 'candidates_pruned': 471, 'candidates_counted': 114792, 'seconds': 0.712}
+  support 0.0200: {'min_support': 0.02, 'min_support_count': 396, 'frequent_1': 299, 'frequent_2': 90, 'frequent_3plus': 3, 'total_frequent': 392, 'largest_itemset': 3, 'candidates_generated': 44728, 'candidates_pruned': 110, 'candidates_counted': 44618, 'seconds': 0.372}
+  support 0.0300: {'min_support': 0.03, 'min_support_count': 593, 'frequent_1': 131, 'frequent_2': 10, 'frequent_3plus': 0, 'total_frequent': 141, 'largest_itemset': 2, 'candidates_generated': 8517, 'candidates_pruned': 1, 'candidates_counted': 8516, 'seconds': 0.149}
+  support 0.0400: {'min_support': 0.04, 'min_support_count': 791, 'frequent_1': 70, 'frequent_2': 1, 'frequent_3plus': 0, 'total_frequent': 71, 'largest_itemset': 2, 'candidates_generated': 2415, 'candidates_pruned': 0, 'candidates_counted': 2415, 'seconds': 0.076}
+  support 0.0500: {'min_support': 0.05, 'min_support_count': 989, 'frequent_1': 36, 'frequent_2': 0, 'frequent_3plus': 0, 'total_frequent': 36, 'largest_itemset': 1, 'candidates_generated': 630, 'candidates_pruned': 0, 'candidates_counted': 630, 'seconds': 0.046}
+Reference run (support = 1%)
+Experiment 2: confidence
+Experiment 3: pruning
+Experiment 4: scalability
+  n=2500: {'transactions': 2500, 'min_support_count': 25, 'distinct_items': 3311, 'item_occurrences': 64856, 'candidates_counted': 346796, 'frequent_itemsets': 2801, 'seconds': 0.34, 'ms_per_1000_transactions': 135.9}
+  n=5000: {'transactions': 5000, 'min_support_count': 50, 'distinct_items': 3514, 'item_occurrences': 129326, 'candidates_counted': 346328, 'frequent_itemsets': 2312, 'seconds': 0.54, 'ms_per_1000_transactions': 108.0}
+  n=10000: {'transactions': 10000, 'min_support_count': 100, 'distinct_items': 3667, 'item_occurrences': 257733, 'candidates_counted': 337273, 'frequent_itemsets': 2029, 'seconds': 0.915, 'ms_per_1000_transactions': 91.5}
+  n=15000: {'transactions': 15000, 'min_support_count': 150, 'distinct_items': 3721, 'item_occurrences': 391596, 'candidates_counted': 346423, 'frequent_itemsets': 2072, 'seconds': 1.375, 'ms_per_1000_transactions': 91.7}
+  n=19766: {'transactions': 19766, 'min_support_count': 198, 'distinct_items': 3749, 'item_occurrences': 513563, 'candidates_counted': 342221, 'frequent_itemsets': 2013, 'seconds': 1.766, 'ms_per_1000_transactions': 89.3}
+
+Saved results to results/ (json, tables, figures).
+Figures: fig1_support_vs_frequent_itemsets.png, fig2_support_vs_candidates.png, fig3_support_vs_time.png, fig4_confidence_vs_rules.png, fig5_scalability_time.png, fig6_pruning_per_level.png

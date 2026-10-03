@@ -1,0 +1,5 @@
+| min_support | frequent_items_m | pairs_all_items | triangular_all_items_MB | pairs_frequent_items | triangular_renumbered_MB | occurring_pairs | occurring_pct | triples_MB | better_method | frequent_pairs | seconds |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 0.005 | 1544 | 7025626 | 28.1 | 1191196 | 4.765 | 1154145 | 96.9 | 13.85 | triangular | 8191 | 0.831 |
+| 0.01 | 824 | 7025626 | 28.1 | 339076 | 1.356 | 337984 | 99.7 | 4.056 | triangular | 902 | 0.368 |
+| 0.02 | 299 | 7025626 | 28.1 | 44551 | 0.178 | 44539 | 100.0 | 0.534 | triangular | 90 | 0.259 |

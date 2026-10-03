@@ -1,0 +1,2078 @@
+{
+  "environment": {
+    "python": "3.13.3",
+    "os": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "cpu": "Apple M2 Max",
+    "ram_gb": 32.0,
+    "packages": {
+      "pandas": "3.0.6",
+      "numpy": "2.5.3",
+      "openpyxl": "3.1.5",
+      "flask": "3.1.3",
+      "matplotlib": "3.11.2",
+      "pytest": "9.1.1"
+    },
+    "timing": "wall-clock (time.perf_counter), median of 3 runs, single process"
+  },
+  "dataset": {
+    "transactions": 19766,
+    "unique_items": 3749,
+    "raw_rows": 541909
+  },
+  "settings": {
+    "support_thresholds": [
+      0.005,
+      0.0075,
+      0.01,
+      0.015,
+      0.02,
+      0.03,
+      0.04,
+      0.05
+    ],
+    "reference_support": 0.01,
+    "confidence_thresholds": [
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ],
+    "reference_confidence": 0.5,
+    "repeats": 3,
+    "random_seed": 42
+  },
+  "support_experiment": [
+    {
+      "min_support": 0.005,
+      "min_support_count": 99,
+      "frequent_1": 1544,
+      "frequent_2": 8191,
+      "frequent_3plus": 7500,
+      "total_frequent": 17235,
+      "largest_itemset": 6,
+      "candidates_generated": 1455977,
+      "candidates_pruned": 145389,
+      "candidates_counted": 1310588,
+      "seconds": 7.974
+    },
+    {
+      "min_support": 0.0075,
+      "min_support_count": 149,
+      "frequent_1": 1091,
+      "frequent_2": 2290,
+      "frequent_3plus": 1137,
+      "total_frequent": 4518,
+      "largest_itemset": 6,
+      "candidates_generated": 624709,
+      "candidates_pruned": 14725,
+      "candidates_counted": 609984,
+      "seconds": 2.964
+    },
+    {
+      "min_support": 0.01,
+      "min_support_count": 198,
+      "frequent_1": 824,
+      "frequent_2": 902,
+      "frequent_3plus": 287,
+      "total_frequent": 2013,
+      "largest_itemset": 5,
+      "candidates_generated": 345160,
+      "candidates_pruned": 2939,
+      "candidates_counted": 342221,
+      "seconds": 1.575
+    },
+    {
+      "min_support": 0.015,
+      "min_support_count": 297,
+      "frequent_1": 479,
+      "frequent_2": 240,
+      "frequent_3plus": 39,
+      "total_frequent": 758,
+      "largest_itemset": 4,
+      "candidates_generated": 115263,
+      "candidates_pruned": 471,
+      "candidates_counted": 114792,
+      "seconds": 0.663
+    },
+    {
+      "min_support": 0.02,
+      "min_support_count": 396,
+      "frequent_1": 299,
+      "frequent_2": 90,
+      "frequent_3plus": 3,
+      "total_frequent": 392,
+      "largest_itemset": 3,
+      "candidates_generated": 44728,
+      "candidates_pruned": 110,
+      "candidates_counted": 44618,
+      "seconds": 0.353
+    },
+    {
+      "min_support": 0.03,
+      "min_support_count": 593,
+      "frequent_1": 131,
+      "frequent_2": 10,
+      "frequent_3plus": 0,
+      "total_frequent": 141,
+      "largest_itemset": 2,
+      "candidates_generated": 8517,
+      "candidates_pruned": 1,
+      "candidates_counted": 8516,
+      "seconds": 0.144
+    },
+    {
+      "min_support": 0.04,
+      "min_support_count": 791,
+      "frequent_1": 70,
+      "frequent_2": 1,
+      "frequent_3plus": 0,
+      "total_frequent": 71,
+      "largest_itemset": 2,
+      "candidates_generated": 2415,
+      "candidates_pruned": 0,
+      "candidates_counted": 2415,
+      "seconds": 0.075
+    },
+    {
+      "min_support": 0.05,
+      "min_support_count": 989,
+      "frequent_1": 36,
+      "frequent_2": 0,
+      "frequent_3plus": 0,
+      "total_frequent": 36,
+      "largest_itemset": 1,
+      "candidates_generated": 630,
+      "candidates_pruned": 0,
+      "candidates_counted": 630,
+      "seconds": 0.045
+    }
+  ],
+  "confidence_experiment": [
+    {
+      "min_confidence": 0.3,
+      "rules": 1938,
+      "rules_from_pairs": 755,
+      "rules_from_3plus": 1183,
+      "avg_confidence": 0.5205,
+      "avg_lift": 13.679,
+      "min_lift": 2.65,
+      "strongest_rule": "{HERB MARKER PARSLEY, HERB MARKER THYME} -> {HERB MARKER ROSEMARY}"
+    },
+    {
+      "min_confidence": 0.4,
+      "rules": 1402,
+      "rules_from_pairs": 455,
+      "rules_from_3plus": 947,
+      "avg_confidence": 0.5862,
+      "avg_lift": 15.247,
+      "min_lift": 3.53,
+      "strongest_rule": "{HERB MARKER PARSLEY, HERB MARKER THYME} -> {HERB MARKER ROSEMARY}"
+    },
+    {
+      "min_confidence": 0.5,
+      "rules": 962,
+      "rules_from_pairs": 252,
+      "rules_from_3plus": 710,
+      "avg_confidence": 0.6495,
+      "avg_lift": 16.957,
+      "min_lift": 4.739,
+      "strongest_rule": "{HERB MARKER PARSLEY, HERB MARKER THYME} -> {HERB MARKER ROSEMARY}"
+    },
+    {
+      "min_confidence": 0.6,
+      "rules": 574,
+      "rules_from_pairs": 122,
+      "rules_from_3plus": 452,
+      "avg_confidence": 0.7173,
+      "avg_lift": 19.306,
+      "min_lift": 5.687,
+      "strongest_rule": "{HERB MARKER PARSLEY, HERB MARKER THYME} -> {HERB MARKER ROSEMARY}"
+    },
+    {
+      "min_confidence": 0.7,
+      "rules": 289,
+      "rules_from_pairs": 59,
+      "rules_from_3plus": 230,
+      "avg_confidence": 0.7876,
+      "avg_lift": 23.326,
+      "min_lift": 6.241,
+      "strongest_rule": "{HERB MARKER PARSLEY, HERB MARKER THYME} -> {HERB MARKER ROSEMARY}"
+    },
+    {
+      "min_confidence": 0.8,
+      "rules": 109,
+      "rules_from_pairs": 28,
+      "rules_from_3plus": 81,
+      "avg_confidence": 0.859,
+      "avg_lift": 35.707,
+      "min_lift": 7.577,
+      "strongest_rule": "{HERB MARKER PARSLEY, HERB MARKER THYME} -> {HERB MARKER ROSEMARY}"
+    },
+    {
+      "min_confidence": 0.9,
+      "rules": 20,
+      "rules_from_pairs": 4,
+      "rules_from_3plus": 16,
+      "avg_confidence": 0.922,
+      "avg_lift": 50.496,
+      "min_lift": 16.82,
+      "strongest_rule": "{HERB MARKER PARSLEY, HERB MARKER THYME} -> {HERB MARKER ROSEMARY}"
+    }
+  ],
+  "top_rules_by_confidence_threshold": {
+    "0.3": [
+      {
+        "antecedent": [
+          "HERB MARKER PARSLEY",
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 203,
+        "support": 0.01027,
+        "confidence": 0.9531,
+        "lift": 78.492
+      },
+      {
+        "antecedent": [
+          "HERB MARKER BASIL",
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 200,
+        "support": 0.01012,
+        "confidence": 0.9524,
+        "lift": 78.437
+      },
+      {
+        "antecedent": [
+          "REGENCY TEA PLATE PINK",
+          "REGENCY TEA PLATE ROSES"
+        ],
+        "consequent": [
+          "REGENCY TEA PLATE GREEN"
+        ],
+        "support_count": 255,
+        "support": 0.0129,
+        "confidence": 0.948,
+        "lift": 49.179
+      },
+      {
+        "antecedent": [
+          "HERB MARKER PARSLEY",
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 203,
+        "support": 0.01027,
+        "confidence": 0.9442,
+        "lift": 78.746
+      },
+      {
+        "antecedent": [
+          "HERB MARKER BASIL",
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 200,
+        "support": 0.01012,
+        "confidence": 0.9346,
+        "lift": 77.945
+      },
+      {
+        "antecedent": [
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 221,
+        "support": 0.01118,
+        "confidence": 0.9325,
+        "lift": 76.798
+      },
+      {
+        "antecedent": [
+          "WOODEN HEART CHRISTMAS SCANDINAVIAN",
+          "WOODEN TREE CHRISTMAS SCANDINAVIAN"
+        ],
+        "consequent": [
+          "WOODEN STAR CHRISTMAS SCANDINAVIAN"
+        ],
+        "support_count": 231,
+        "support": 0.01169,
+        "confidence": 0.9277,
+        "lift": 35.815
+      },
+      {
+        "antecedent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 221,
+        "support": 0.01118,
+        "confidence": 0.9208,
+        "lift": 76.798
+      },
+      {
+        "antecedent": [
+          "CHARLOTTE BAG PINK POLKADOT",
+          "STRAWBERRY CHARLOTTE BAG",
+          "WOODLAND CHARLOTTE BAG"
+        ],
+        "consequent": [
+          "RED RETROSPOT CHARLOTTE BAG"
+        ],
+        "support_count": 242,
+        "support": 0.01224,
+        "confidence": 0.9202,
+        "lift": 17.624
+      },
+      {
+        "antecedent": [
+          "CHARLOTTE BAG PINK POLKADOT",
+          "CHARLOTTE BAG SUKI DESIGN",
+          "STRAWBERRY CHARLOTTE BAG",
+          "WOODLAND CHARLOTTE BAG"
+        ],
+        "consequent": [
+          "RED RETROSPOT CHARLOTTE BAG"
+        ],
+        "support_count": 204,
+        "support": 0.01032,
+        "confidence": 0.9189,
+        "lift": 17.6
+      }
+    ],
+    "0.4": [
+      {
+        "antecedent": [
+          "HERB MARKER PARSLEY",
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 203,
+        "support": 0.01027,
+        "confidence": 0.9531,
+        "lift": 78.492
+      },
+      {
+        "antecedent": [
+          "HERB MARKER BASIL",
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 200,
+        "support": 0.01012,
+        "confidence": 0.9524,
+        "lift": 78.437
+      },
+      {
+        "antecedent": [
+          "REGENCY TEA PLATE PINK",
+          "REGENCY TEA PLATE ROSES"
+        ],
+        "consequent": [
+          "REGENCY TEA PLATE GREEN"
+        ],
+        "support_count": 255,
+        "support": 0.0129,
+        "confidence": 0.948,
+        "lift": 49.179
+      },
+      {
+        "antecedent": [
+          "HERB MARKER PARSLEY",
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 203,
+        "support": 0.01027,
+        "confidence": 0.9442,
+        "lift": 78.746
+      },
+      {
+        "antecedent": [
+          "HERB MARKER BASIL",
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 200,
+        "support": 0.01012,
+        "confidence": 0.9346,
+        "lift": 77.945
+      },
+      {
+        "antecedent": [
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 221,
+        "support": 0.01118,
+        "confidence": 0.9325,
+        "lift": 76.798
+      },
+      {
+        "antecedent": [
+          "WOODEN HEART CHRISTMAS SCANDINAVIAN",
+          "WOODEN TREE CHRISTMAS SCANDINAVIAN"
+        ],
+        "consequent": [
+          "WOODEN STAR CHRISTMAS SCANDINAVIAN"
+        ],
+        "support_count": 231,
+        "support": 0.01169,
+        "confidence": 0.9277,
+        "lift": 35.815
+      },
+      {
+        "antecedent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 221,
+        "support": 0.01118,
+        "confidence": 0.9208,
+        "lift": 76.798
+      },
+      {
+        "antecedent": [
+          "CHARLOTTE BAG PINK POLKADOT",
+          "STRAWBERRY CHARLOTTE BAG",
+          "WOODLAND CHARLOTTE BAG"
+        ],
+        "consequent": [
+          "RED RETROSPOT CHARLOTTE BAG"
+        ],
+        "support_count": 242,
+        "support": 0.01224,
+        "confidence": 0.9202,
+        "lift": 17.624
+      },
+      {
+        "antecedent": [
+          "CHARLOTTE BAG PINK POLKADOT",
+          "CHARLOTTE BAG SUKI DESIGN",
+          "STRAWBERRY CHARLOTTE BAG",
+          "WOODLAND CHARLOTTE BAG"
+        ],
+        "consequent": [
+          "RED RETROSPOT CHARLOTTE BAG"
+        ],
+        "support_count": 204,
+        "support": 0.01032,
+        "confidence": 0.9189,
+        "lift": 17.6
+      }
+    ],
+    "0.5": [
+      {
+        "antecedent": [
+          "HERB MARKER PARSLEY",
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 203,
+        "support": 0.01027,
+        "confidence": 0.9531,
+        "lift": 78.492
+      },
+      {
+        "antecedent": [
+          "HERB MARKER BASIL",
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 200,
+        "support": 0.01012,
+        "confidence": 0.9524,
+        "lift": 78.437
+      },
+      {
+        "antecedent": [
+          "REGENCY TEA PLATE PINK",
+          "REGENCY TEA PLATE ROSES"
+        ],
+        "consequent": [
+          "REGENCY TEA PLATE GREEN"
+        ],
+        "support_count": 255,
+        "support": 0.0129,
+        "confidence": 0.948,
+        "lift": 49.179
+      },
+      {
+        "antecedent": [
+          "HERB MARKER PARSLEY",
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 203,
+        "support": 0.01027,
+        "confidence": 0.9442,
+        "lift": 78.746
+      },
+      {
+        "antecedent": [
+          "HERB MARKER BASIL",
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 200,
+        "support": 0.01012,
+        "confidence": 0.9346,
+        "lift": 77.945
+      },
+      {
+        "antecedent": [
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 221,
+        "support": 0.01118,
+        "confidence": 0.9325,
+        "lift": 76.798
+      },
+      {
+        "antecedent": [
+          "WOODEN HEART CHRISTMAS SCANDINAVIAN",
+          "WOODEN TREE CHRISTMAS SCANDINAVIAN"
+        ],
+        "consequent": [
+          "WOODEN STAR CHRISTMAS SCANDINAVIAN"
+        ],
+        "support_count": 231,
+        "support": 0.01169,
+        "confidence": 0.9277,
+        "lift": 35.815
+      },
+      {
+        "antecedent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 221,
+        "support": 0.01118,
+        "confidence": 0.9208,
+        "lift": 76.798
+      },
+      {
+        "antecedent": [
+          "CHARLOTTE BAG PINK POLKADOT",
+          "STRAWBERRY CHARLOTTE BAG",
+          "WOODLAND CHARLOTTE BAG"
+        ],
+        "consequent": [
+          "RED RETROSPOT CHARLOTTE BAG"
+        ],
+        "support_count": 242,
+        "support": 0.01224,
+        "confidence": 0.9202,
+        "lift": 17.624
+      },
+      {
+        "antecedent": [
+          "CHARLOTTE BAG PINK POLKADOT",
+          "CHARLOTTE BAG SUKI DESIGN",
+          "STRAWBERRY CHARLOTTE BAG",
+          "WOODLAND CHARLOTTE BAG"
+        ],
+        "consequent": [
+          "RED RETROSPOT CHARLOTTE BAG"
+        ],
+        "support_count": 204,
+        "support": 0.01032,
+        "confidence": 0.9189,
+        "lift": 17.6
+      }
+    ],
+    "0.6": [
+      {
+        "antecedent": [
+          "HERB MARKER PARSLEY",
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 203,
+        "support": 0.01027,
+        "confidence": 0.9531,
+        "lift": 78.492
+      },
+      {
+        "antecedent": [
+          "HERB MARKER BASIL",
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 200,
+        "support": 0.01012,
+        "confidence": 0.9524,
+        "lift": 78.437
+      },
+      {
+        "antecedent": [
+          "REGENCY TEA PLATE PINK",
+          "REGENCY TEA PLATE ROSES"
+        ],
+        "consequent": [
+          "REGENCY TEA PLATE GREEN"
+        ],
+        "support_count": 255,
+        "support": 0.0129,
+        "confidence": 0.948,
+        "lift": 49.179
+      },
+      {
+        "antecedent": [
+          "HERB MARKER PARSLEY",
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 203,
+        "support": 0.01027,
+        "confidence": 0.9442,
+        "lift": 78.746
+      },
+      {
+        "antecedent": [
+          "HERB MARKER BASIL",
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 200,
+        "support": 0.01012,
+        "confidence": 0.9346,
+        "lift": 77.945
+      },
+      {
+        "antecedent": [
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 221,
+        "support": 0.01118,
+        "confidence": 0.9325,
+        "lift": 76.798
+      },
+      {
+        "antecedent": [
+          "WOODEN HEART CHRISTMAS SCANDINAVIAN",
+          "WOODEN TREE CHRISTMAS SCANDINAVIAN"
+        ],
+        "consequent": [
+          "WOODEN STAR CHRISTMAS SCANDINAVIAN"
+        ],
+        "support_count": 231,
+        "support": 0.01169,
+        "confidence": 0.9277,
+        "lift": 35.815
+      },
+      {
+        "antecedent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 221,
+        "support": 0.01118,
+        "confidence": 0.9208,
+        "lift": 76.798
+      },
+      {
+        "antecedent": [
+          "CHARLOTTE BAG PINK POLKADOT",
+          "STRAWBERRY CHARLOTTE BAG",
+          "WOODLAND CHARLOTTE BAG"
+        ],
+        "consequent": [
+          "RED RETROSPOT CHARLOTTE BAG"
+        ],
+        "support_count": 242,
+        "support": 0.01224,
+        "confidence": 0.9202,
+        "lift": 17.624
+      },
+      {
+        "antecedent": [
+          "CHARLOTTE BAG PINK POLKADOT",
+          "CHARLOTTE BAG SUKI DESIGN",
+          "STRAWBERRY CHARLOTTE BAG",
+          "WOODLAND CHARLOTTE BAG"
+        ],
+        "consequent": [
+          "RED RETROSPOT CHARLOTTE BAG"
+        ],
+        "support_count": 204,
+        "support": 0.01032,
+        "confidence": 0.9189,
+        "lift": 17.6
+      }
+    ],
+    "0.7": [
+      {
+        "antecedent": [
+          "HERB MARKER PARSLEY",
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 203,
+        "support": 0.01027,
+        "confidence": 0.9531,
+        "lift": 78.492
+      },
+      {
+        "antecedent": [
+          "HERB MARKER BASIL",
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 200,
+        "support": 0.01012,
+        "confidence": 0.9524,
+        "lift": 78.437
+      },
+      {
+        "antecedent": [
+          "REGENCY TEA PLATE PINK",
+          "REGENCY TEA PLATE ROSES"
+        ],
+        "consequent": [
+          "REGENCY TEA PLATE GREEN"
+        ],
+        "support_count": 255,
+        "support": 0.0129,
+        "confidence": 0.948,
+        "lift": 49.179
+      },
+      {
+        "antecedent": [
+          "HERB MARKER PARSLEY",
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 203,
+        "support": 0.01027,
+        "confidence": 0.9442,
+        "lift": 78.746
+      },
+      {
+        "antecedent": [
+          "HERB MARKER BASIL",
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 200,
+        "support": 0.01012,
+        "confidence": 0.9346,
+        "lift": 77.945
+      },
+      {
+        "antecedent": [
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 221,
+        "support": 0.01118,
+        "confidence": 0.9325,
+        "lift": 76.798
+      },
+      {
+        "antecedent": [
+          "WOODEN HEART CHRISTMAS SCANDINAVIAN",
+          "WOODEN TREE CHRISTMAS SCANDINAVIAN"
+        ],
+        "consequent": [
+          "WOODEN STAR CHRISTMAS SCANDINAVIAN"
+        ],
+        "support_count": 231,
+        "support": 0.01169,
+        "confidence": 0.9277,
+        "lift": 35.815
+      },
+      {
+        "antecedent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 221,
+        "support": 0.01118,
+        "confidence": 0.9208,
+        "lift": 76.798
+      },
+      {
+        "antecedent": [
+          "CHARLOTTE BAG PINK POLKADOT",
+          "STRAWBERRY CHARLOTTE BAG",
+          "WOODLAND CHARLOTTE BAG"
+        ],
+        "consequent": [
+          "RED RETROSPOT CHARLOTTE BAG"
+        ],
+        "support_count": 242,
+        "support": 0.01224,
+        "confidence": 0.9202,
+        "lift": 17.624
+      },
+      {
+        "antecedent": [
+          "CHARLOTTE BAG PINK POLKADOT",
+          "CHARLOTTE BAG SUKI DESIGN",
+          "STRAWBERRY CHARLOTTE BAG",
+          "WOODLAND CHARLOTTE BAG"
+        ],
+        "consequent": [
+          "RED RETROSPOT CHARLOTTE BAG"
+        ],
+        "support_count": 204,
+        "support": 0.01032,
+        "confidence": 0.9189,
+        "lift": 17.6
+      }
+    ],
+    "0.8": [
+      {
+        "antecedent": [
+          "HERB MARKER PARSLEY",
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 203,
+        "support": 0.01027,
+        "confidence": 0.9531,
+        "lift": 78.492
+      },
+      {
+        "antecedent": [
+          "HERB MARKER BASIL",
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 200,
+        "support": 0.01012,
+        "confidence": 0.9524,
+        "lift": 78.437
+      },
+      {
+        "antecedent": [
+          "REGENCY TEA PLATE PINK",
+          "REGENCY TEA PLATE ROSES"
+        ],
+        "consequent": [
+          "REGENCY TEA PLATE GREEN"
+        ],
+        "support_count": 255,
+        "support": 0.0129,
+        "confidence": 0.948,
+        "lift": 49.179
+      },
+      {
+        "antecedent": [
+          "HERB MARKER PARSLEY",
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 203,
+        "support": 0.01027,
+        "confidence": 0.9442,
+        "lift": 78.746
+      },
+      {
+        "antecedent": [
+          "HERB MARKER BASIL",
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 200,
+        "support": 0.01012,
+        "confidence": 0.9346,
+        "lift": 77.945
+      },
+      {
+        "antecedent": [
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 221,
+        "support": 0.01118,
+        "confidence": 0.9325,
+        "lift": 76.798
+      },
+      {
+        "antecedent": [
+          "WOODEN HEART CHRISTMAS SCANDINAVIAN",
+          "WOODEN TREE CHRISTMAS SCANDINAVIAN"
+        ],
+        "consequent": [
+          "WOODEN STAR CHRISTMAS SCANDINAVIAN"
+        ],
+        "support_count": 231,
+        "support": 0.01169,
+        "confidence": 0.9277,
+        "lift": 35.815
+      },
+      {
+        "antecedent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 221,
+        "support": 0.01118,
+        "confidence": 0.9208,
+        "lift": 76.798
+      },
+      {
+        "antecedent": [
+          "CHARLOTTE BAG PINK POLKADOT",
+          "STRAWBERRY CHARLOTTE BAG",
+          "WOODLAND CHARLOTTE BAG"
+        ],
+        "consequent": [
+          "RED RETROSPOT CHARLOTTE BAG"
+        ],
+        "support_count": 242,
+        "support": 0.01224,
+        "confidence": 0.9202,
+        "lift": 17.624
+      },
+      {
+        "antecedent": [
+          "CHARLOTTE BAG PINK POLKADOT",
+          "CHARLOTTE BAG SUKI DESIGN",
+          "STRAWBERRY CHARLOTTE BAG",
+          "WOODLAND CHARLOTTE BAG"
+        ],
+        "consequent": [
+          "RED RETROSPOT CHARLOTTE BAG"
+        ],
+        "support_count": 204,
+        "support": 0.01032,
+        "confidence": 0.9189,
+        "lift": 17.6
+      }
+    ],
+    "0.9": [
+      {
+        "antecedent": [
+          "HERB MARKER PARSLEY",
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 203,
+        "support": 0.01027,
+        "confidence": 0.9531,
+        "lift": 78.492
+      },
+      {
+        "antecedent": [
+          "HERB MARKER BASIL",
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 200,
+        "support": 0.01012,
+        "confidence": 0.9524,
+        "lift": 78.437
+      },
+      {
+        "antecedent": [
+          "REGENCY TEA PLATE PINK",
+          "REGENCY TEA PLATE ROSES"
+        ],
+        "consequent": [
+          "REGENCY TEA PLATE GREEN"
+        ],
+        "support_count": 255,
+        "support": 0.0129,
+        "confidence": 0.948,
+        "lift": 49.179
+      },
+      {
+        "antecedent": [
+          "HERB MARKER PARSLEY",
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 203,
+        "support": 0.01027,
+        "confidence": 0.9442,
+        "lift": 78.746
+      },
+      {
+        "antecedent": [
+          "HERB MARKER BASIL",
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 200,
+        "support": 0.01012,
+        "confidence": 0.9346,
+        "lift": 77.945
+      },
+      {
+        "antecedent": [
+          "HERB MARKER THYME"
+        ],
+        "consequent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "support_count": 221,
+        "support": 0.01118,
+        "confidence": 0.9325,
+        "lift": 76.798
+      },
+      {
+        "antecedent": [
+          "WOODEN HEART CHRISTMAS SCANDINAVIAN",
+          "WOODEN TREE CHRISTMAS SCANDINAVIAN"
+        ],
+        "consequent": [
+          "WOODEN STAR CHRISTMAS SCANDINAVIAN"
+        ],
+        "support_count": 231,
+        "support": 0.01169,
+        "confidence": 0.9277,
+        "lift": 35.815
+      },
+      {
+        "antecedent": [
+          "HERB MARKER ROSEMARY"
+        ],
+        "consequent": [
+          "HERB MARKER THYME"
+        ],
+        "support_count": 221,
+        "support": 0.01118,
+        "confidence": 0.9208,
+        "lift": 76.798
+      },
+      {
+        "antecedent": [
+          "CHARLOTTE BAG PINK POLKADOT",
+          "STRAWBERRY CHARLOTTE BAG",
+          "WOODLAND CHARLOTTE BAG"
+        ],
+        "consequent": [
+          "RED RETROSPOT CHARLOTTE BAG"
+        ],
+        "support_count": 242,
+        "support": 0.01224,
+        "confidence": 0.9202,
+        "lift": 17.624
+      },
+      {
+        "antecedent": [
+          "CHARLOTTE BAG PINK POLKADOT",
+          "CHARLOTTE BAG SUKI DESIGN",
+          "STRAWBERRY CHARLOTTE BAG",
+          "WOODLAND CHARLOTTE BAG"
+        ],
+        "consequent": [
+          "RED RETROSPOT CHARLOTTE BAG"
+        ],
+        "support_count": 204,
+        "support": 0.01032,
+        "confidence": 0.9189,
+        "lift": 17.6
+      }
+    ]
+  },
+  "pruning_experiment": {
+    "min_support": 0.01,
+    "min_count": 198,
+    "n_items": 3749,
+    "levels": [
+      {
+        "k": 1,
+        "brute_force_itemsets": 3749,
+        "generated_by_join": 3749,
+        "pruned_by_subset_check": 0,
+        "counted_after_pruning": 3749,
+        "frequent": 824,
+        "pruned_pct_of_join": 0.0,
+        "counted_pct_of_brute_force": "100.00%",
+        "seconds": 0.017
+      },
+      {
+        "k": 2,
+        "brute_force_itemsets": 7025626,
+        "generated_by_join": 339076,
+        "pruned_by_subset_check": 0,
+        "counted_after_pruning": 339076,
+        "frequent": 902,
+        "pruned_pct_of_join": 0.0,
+        "counted_pct_of_brute_force": "4.83%",
+        "seconds": 1.323
+      },
+      {
+        "k": 3,
+        "brute_force_itemsets": 8775006874,
+        "generated_by_join": 5795,
+        "pruned_by_subset_check": 2770,
+        "counted_after_pruning": 3025,
+        "frequent": 261,
+        "pruned_pct_of_join": 47.8,
+        "counted_pct_of_brute_force": "3.4e-05%",
+        "seconds": 0.215
+      },
+      {
+        "k": 4,
+        "brute_force_itemsets": 8217793937501,
+        "generated_by_join": 284,
+        "pruned_by_subset_check": 165,
+        "counted_after_pruning": 119,
+        "frequent": 25,
+        "pruned_pct_of_join": 58.1,
+        "counted_pct_of_brute_force": "1.4e-09%",
+        "seconds": 0.024
+      },
+      {
+        "k": 5,
+        "brute_force_itemsets": 6155127659188249,
+        "generated_by_join": 5,
+        "pruned_by_subset_check": 4,
+        "counted_after_pruning": 1,
+        "frequent": 1,
+        "pruned_pct_of_join": 80.0,
+        "counted_pct_of_brute_force": "1.6e-14%",
+        "seconds": 0.009
+      }
+    ],
+    "examples": [
+      {
+        "candidate": [
+          "6 RIBBONS RUSTIC CHARM",
+          "JAM MAKING SET PRINTED",
+          "SCANDINAVIAN REDS RIBBONS"
+        ],
+        "infrequent_subset": [
+          "JAM MAKING SET PRINTED",
+          "SCANDINAVIAN REDS RIBBONS"
+        ],
+        "infrequent_subset_count": 138
+      },
+      {
+        "candidate": [
+          "6 RIBBONS RUSTIC CHARM",
+          "JAM MAKING SET WITH JARS",
+          "SCANDINAVIAN REDS RIBBONS"
+        ],
+        "infrequent_subset": [
+          "JAM MAKING SET WITH JARS",
+          "SCANDINAVIAN REDS RIBBONS"
+        ],
+        "infrequent_subset_count": 114
+      },
+      {
+        "candidate": [
+          "6 RIBBONS RUSTIC CHARM",
+          "JUMBO BAG RED RETROSPOT",
+          "SCANDINAVIAN REDS RIBBONS"
+        ],
+        "infrequent_subset": [
+          "JUMBO BAG RED RETROSPOT",
+          "SCANDINAVIAN REDS RIBBONS"
+        ],
+        "infrequent_subset_count": 134
+      },
+      {
+        "candidate": [
+          "6 RIBBONS RUSTIC CHARM",
+          "NATURAL SLATE HEART CHALKBOARD",
+          "SCANDINAVIAN REDS RIBBONS"
+        ],
+        "infrequent_subset": [
+          "NATURAL SLATE HEART CHALKBOARD",
+          "SCANDINAVIAN REDS RIBBONS"
+        ],
+        "infrequent_subset_count": 108
+      },
+      {
+        "candidate": [
+          "6 RIBBONS RUSTIC CHARM",
+          "PACK OF 72 RETROSPOT CAKE CASES",
+          "SCANDINAVIAN REDS RIBBONS"
+        ],
+        "infrequent_subset": [
+          "PACK OF 72 RETROSPOT CAKE CASES",
+          "SCANDINAVIAN REDS RIBBONS"
+        ],
+        "infrequent_subset_count": 106
+      }
+    ]
+  },
+  "scalability_experiment": [
+    {
+      "transactions": 2500,
+      "min_support_count": 25,
+      "distinct_items": 3311,
+      "item_occurrences": 64856,
+      "candidates_counted": 346796,
+      "frequent_itemsets": 2801,
+      "seconds": 0.317,
+      "ms_per_1000_transactions": 126.6
+    },
+    {
+      "transactions": 5000,
+      "min_support_count": 50,
+      "distinct_items": 3514,
+      "item_occurrences": 129326,
+      "candidates_counted": 346328,
+      "frequent_itemsets": 2312,
+      "seconds": 0.509,
+      "ms_per_1000_transactions": 101.9
+    },
+    {
+      "transactions": 10000,
+      "min_support_count": 100,
+      "distinct_items": 3667,
+      "item_occurrences": 257733,
+      "candidates_counted": 337273,
+      "frequent_itemsets": 2029,
+      "seconds": 0.849,
+      "ms_per_1000_transactions": 84.9
+    },
+    {
+      "transactions": 15000,
+      "min_support_count": 150,
+      "distinct_items": 3721,
+      "item_occurrences": 391596,
+      "candidates_counted": 346423,
+      "frequent_itemsets": 2072,
+      "seconds": 1.268,
+      "ms_per_1000_transactions": 84.6
+    },
+    {
+      "transactions": 19766,
+      "min_support_count": 198,
+      "distinct_items": 3749,
+      "item_occurrences": 513563,
+      "candidates_counted": 342221,
+      "frequent_itemsets": 2013,
+      "seconds": 1.603,
+      "ms_per_1000_transactions": 81.1
+    }
+  ],
+  "reference_run": {
+    "seconds": 1.576,
+    "levels": [
+      {
+        "k": 1,
+        "candidates_generated": 3749,
+        "candidates_pruned": 0,
+        "candidates_counted": 3749,
+        "frequent_itemsets": 824,
+        "seconds": 0.0175
+      },
+      {
+        "k": 2,
+        "candidates_generated": 339076,
+        "candidates_pruned": 0,
+        "candidates_counted": 339076,
+        "frequent_itemsets": 902,
+        "seconds": 1.3228
+      },
+      {
+        "k": 3,
+        "candidates_generated": 5795,
+        "candidates_pruned": 2770,
+        "candidates_counted": 3025,
+        "frequent_itemsets": 261,
+        "seconds": 0.215
+      },
+      {
+        "k": 4,
+        "candidates_generated": 284,
+        "candidates_pruned": 165,
+        "candidates_counted": 119,
+        "frequent_itemsets": 25,
+        "seconds": 0.0237
+      },
+      {
+        "k": 5,
+        "candidates_generated": 5,
+        "candidates_pruned": 4,
+        "candidates_counted": 1,
+        "frequent_itemsets": 1,
+        "seconds": 0.0093
+      }
+    ],
+    "by_size": {
+      "1": 824,
+      "2": 902,
+      "3": 261,
+      "4": 25,
+      "5": 1
+    },
+    "total_frequent": 2013
+  },
+  "top_itemsets": [
+    {
+      "itemset": [
+        "JUMBO BAG PINK POLKADOT",
+        "JUMBO BAG RED RETROSPOT"
+      ],
+      "size": 2,
+      "support_count": 825,
+      "support": 0.04174
+    },
+    {
+      "itemset": [
+        "GREEN REGENCY TEACUP AND SAUCER",
+        "ROSES REGENCY TEACUP AND SAUCER"
+      ],
+      "size": 2,
+      "support_count": 767,
+      "support": 0.0388
+    },
+    {
+      "itemset": [
+        "JUMBO BAG RED RETROSPOT",
+        "JUMBO STORAGE BAG SUKI"
+      ],
+      "size": 2,
+      "support_count": 724,
+      "support": 0.03663
+    },
+    {
+      "itemset": [
+        "JUMBO BAG RED RETROSPOT",
+        "JUMBO SHOPPER VINTAGE RED PAISLEY"
+      ],
+      "size": 2,
+      "support_count": 680,
+      "support": 0.0344
+    },
+    {
+      "itemset": [
+        "LUNCH BAG RED RETROSPOT",
+        "LUNCH BAG SUKI DESIGN"
+      ],
+      "size": 2,
+      "support_count": 655,
+      "support": 0.03314
+    },
+    {
+      "itemset": [
+        "LUNCH BAG BLACK SKULL.",
+        "LUNCH BAG RED RETROSPOT"
+      ],
+      "size": 2,
+      "support_count": 641,
+      "support": 0.03243
+    },
+    {
+      "itemset": [
+        "ALARM CLOCK BAKELIKE GREEN",
+        "ALARM CLOCK BAKELIKE RED"
+      ],
+      "size": 2,
+      "support_count": 640,
+      "support": 0.03238
+    },
+    {
+      "itemset": [
+        "GREEN REGENCY TEACUP AND SAUCER",
+        "PINK REGENCY TEACUP AND SAUCER"
+      ],
+      "size": 2,
+      "support_count": 632,
+      "support": 0.03197
+    },
+    {
+      "itemset": [
+        "LUNCH BAG PINK POLKADOT",
+        "LUNCH BAG RED RETROSPOT"
+      ],
+      "size": 2,
+      "support_count": 606,
+      "support": 0.03066
+    },
+    {
+      "itemset": [
+        "PINK REGENCY TEACUP AND SAUCER",
+        "ROSES REGENCY TEACUP AND SAUCER"
+      ],
+      "size": 2,
+      "support_count": 598,
+      "support": 0.03025
+    },
+    {
+      "itemset": [
+        "JUMBO BAG BAROQUE BLACK WHITE",
+        "JUMBO BAG RED RETROSPOT"
+      ],
+      "size": 2,
+      "support_count": 585,
+      "support": 0.0296
+    },
+    {
+      "itemset": [
+        "LUNCH BAG BLACK SKULL.",
+        "LUNCH BAG SUKI DESIGN"
+      ],
+      "size": 2,
+      "support_count": 584,
+      "support": 0.02955
+    },
+    {
+      "itemset": [
+        "JUMBO BAG RED RETROSPOT",
+        "LUNCH BAG RED RETROSPOT"
+      ],
+      "size": 2,
+      "support_count": 579,
+      "support": 0.02929
+    },
+    {
+      "itemset": [
+        "JUMBO BAG RED RETROSPOT",
+        "JUMBO BAG VINTAGE DOILY"
+      ],
+      "size": 2,
+      "support_count": 577,
+      "support": 0.02919
+    },
+    {
+      "itemset": [
+        "LUNCH BAG RED RETROSPOT",
+        "LUNCH BAG SPACEBOY DESIGN"
+      ],
+      "size": 2,
+      "support_count": 560,
+      "support": 0.02833
+    },
+    {
+      "itemset": [
+        "LUNCH BAG CARS BLUE",
+        "LUNCH BAG RED RETROSPOT"
+      ],
+      "size": 2,
+      "support_count": 555,
+      "support": 0.02808
+    },
+    {
+      "itemset": [
+        "PAPER CHAIN KIT 50'S CHRISTMAS",
+        "PAPER CHAIN KIT VINTAGE CHRISTMAS"
+      ],
+      "size": 2,
+      "support_count": 552,
+      "support": 0.02793
+    },
+    {
+      "itemset": [
+        "GARDENERS KNEELING PAD CUP OF TEA",
+        "GARDENERS KNEELING PAD KEEP CALM"
+      ],
+      "size": 2,
+      "support_count": 546,
+      "support": 0.02762
+    },
+    {
+      "itemset": [
+        "JUMBO BAG APPLES",
+        "JUMBO BAG RED RETROSPOT"
+      ],
+      "size": 2,
+      "support_count": 546,
+      "support": 0.02762
+    },
+    {
+      "itemset": [
+        "LUNCH BAG BLACK SKULL.",
+        "LUNCH BAG PINK POLKADOT"
+      ],
+      "size": 2,
+      "support_count": 544,
+      "support": 0.02752
+    },
+    {
+      "itemset": [
+        "GREEN REGENCY TEACUP AND SAUCER",
+        "PINK REGENCY TEACUP AND SAUCER",
+        "ROSES REGENCY TEACUP AND SAUCER"
+      ],
+      "size": 3,
+      "support_count": 541,
+      "support": 0.02737
+    },
+    {
+      "itemset": [
+        "JUMBO BAG RED RETROSPOT",
+        "JUMBO BAG SCANDINAVIAN BLUE PAISLEY"
+      ],
+      "size": 2,
+      "support_count": 541,
+      "support": 0.02737
+    },
+    {
+      "itemset": [
+        "LUNCH BAG CARS BLUE",
+        "LUNCH BAG SUKI DESIGN"
+      ],
+      "size": 2,
+      "support_count": 539,
+      "support": 0.02727
+    },
+    {
+      "itemset": [
+        "WOODEN FRAME ANTIQUE WHITE",
+        "WOODEN PICTURE FRAME WHITE FINISH"
+      ],
+      "size": 2,
+      "support_count": 539,
+      "support": 0.02727
+    },
+    {
+      "itemset": [
+        "DOLLY GIRL LUNCH BOX",
+        "SPACEBOY LUNCH BOX"
+      ],
+      "size": 2,
+      "support_count": 538,
+      "support": 0.02722
+    }
+  ],
+  "top_rules": [
+    {
+      "antecedent": [
+        "HERB MARKER PARSLEY",
+        "HERB MARKER THYME"
+      ],
+      "consequent": [
+        "HERB MARKER ROSEMARY"
+      ],
+      "support_count": 203,
+      "support": 0.01027,
+      "confidence": 0.9531,
+      "lift": 78.492
+    },
+    {
+      "antecedent": [
+        "HERB MARKER BASIL",
+        "HERB MARKER THYME"
+      ],
+      "consequent": [
+        "HERB MARKER ROSEMARY"
+      ],
+      "support_count": 200,
+      "support": 0.01012,
+      "confidence": 0.9524,
+      "lift": 78.437
+    },
+    {
+      "antecedent": [
+        "REGENCY TEA PLATE PINK",
+        "REGENCY TEA PLATE ROSES"
+      ],
+      "consequent": [
+        "REGENCY TEA PLATE GREEN"
+      ],
+      "support_count": 255,
+      "support": 0.0129,
+      "confidence": 0.948,
+      "lift": 49.179
+    },
+    {
+      "antecedent": [
+        "HERB MARKER PARSLEY",
+        "HERB MARKER ROSEMARY"
+      ],
+      "consequent": [
+        "HERB MARKER THYME"
+      ],
+      "support_count": 203,
+      "support": 0.01027,
+      "confidence": 0.9442,
+      "lift": 78.746
+    },
+    {
+      "antecedent": [
+        "HERB MARKER BASIL",
+        "HERB MARKER ROSEMARY"
+      ],
+      "consequent": [
+        "HERB MARKER THYME"
+      ],
+      "support_count": 200,
+      "support": 0.01012,
+      "confidence": 0.9346,
+      "lift": 77.945
+    },
+    {
+      "antecedent": [
+        "HERB MARKER THYME"
+      ],
+      "consequent": [
+        "HERB MARKER ROSEMARY"
+      ],
+      "support_count": 221,
+      "support": 0.01118,
+      "confidence": 0.9325,
+      "lift": 76.798
+    },
+    {
+      "antecedent": [
+        "WOODEN HEART CHRISTMAS SCANDINAVIAN",
+        "WOODEN TREE CHRISTMAS SCANDINAVIAN"
+      ],
+      "consequent": [
+        "WOODEN STAR CHRISTMAS SCANDINAVIAN"
+      ],
+      "support_count": 231,
+      "support": 0.01169,
+      "confidence": 0.9277,
+      "lift": 35.815
+    },
+    {
+      "antecedent": [
+        "HERB MARKER ROSEMARY"
+      ],
+      "consequent": [
+        "HERB MARKER THYME"
+      ],
+      "support_count": 221,
+      "support": 0.01118,
+      "confidence": 0.9208,
+      "lift": 76.798
+    },
+    {
+      "antecedent": [
+        "CHARLOTTE BAG PINK POLKADOT",
+        "STRAWBERRY CHARLOTTE BAG",
+        "WOODLAND CHARLOTTE BAG"
+      ],
+      "consequent": [
+        "RED RETROSPOT CHARLOTTE BAG"
+      ],
+      "support_count": 242,
+      "support": 0.01224,
+      "confidence": 0.9202,
+      "lift": 17.624
+    },
+    {
+      "antecedent": [
+        "CHARLOTTE BAG PINK POLKADOT",
+        "CHARLOTTE BAG SUKI DESIGN",
+        "STRAWBERRY CHARLOTTE BAG",
+        "WOODLAND CHARLOTTE BAG"
+      ],
+      "consequent": [
+        "RED RETROSPOT CHARLOTTE BAG"
+      ],
+      "support_count": 204,
+      "support": 0.01032,
+      "confidence": 0.9189,
+      "lift": 17.6
+    },
+    {
+      "antecedent": [
+        "HERB MARKER ROSEMARY",
+        "HERB MARKER THYME"
+      ],
+      "consequent": [
+        "HERB MARKER PARSLEY"
+      ],
+      "support_count": 203,
+      "support": 0.01027,
+      "confidence": 0.9186,
+      "lift": 76.286
+    },
+    {
+      "antecedent": [
+        "REGENCY TEA PLATE GREEN",
+        "REGENCY TEA PLATE PINK"
+      ],
+      "consequent": [
+        "REGENCY TEA PLATE ROSES"
+      ],
+      "support_count": 255,
+      "support": 0.0129,
+      "confidence": 0.9173,
+      "lift": 40.743
+    },
+    {
+      "antecedent": [
+        "REGENCY TEA PLATE PINK"
+      ],
+      "consequent": [
+        "REGENCY TEA PLATE GREEN"
+      ],
+      "support_count": 278,
+      "support": 0.01406,
+      "confidence": 0.9115,
+      "lift": 47.287
+    },
+    {
+      "antecedent": [
+        "PINK REGENCY TEACUP AND SAUCER",
+        "REGENCY CAKESTAND 3 TIER",
+        "ROSES REGENCY TEACUP AND SAUCER"
+      ],
+      "consequent": [
+        "GREEN REGENCY TEACUP AND SAUCER"
+      ],
+      "support_count": 301,
+      "support": 0.01523,
+      "confidence": 0.9094,
+      "lift": 17.744
+    },
+    {
+      "antecedent": [
+        "REGENCY TEA PLATE GREEN",
+        "ROSES REGENCY TEACUP AND SAUCER"
+      ],
+      "consequent": [
+        "REGENCY TEA PLATE ROSES"
+      ],
+      "support_count": 207,
+      "support": 0.01047,
+      "confidence": 0.9079,
+      "lift": 40.327
+    },
+    {
+      "antecedent": [
+        "GREEN REGENCY TEACUP AND SAUCER",
+        "REGENCY TEA PLATE ROSES"
+      ],
+      "consequent": [
+        "ROSES REGENCY TEACUP AND SAUCER"
+      ],
+      "support_count": 203,
+      "support": 0.01027,
+      "confidence": 0.9062,
+      "lift": 16.82
+    },
+    {
+      "antecedent": [
+        "HERB MARKER ROSEMARY",
+        "HERB MARKER THYME"
+      ],
+      "consequent": [
+        "HERB MARKER BASIL"
+      ],
+      "support_count": 200,
+      "support": 0.01012,
+      "confidence": 0.905,
+      "lift": 73.916
+    },
+    {
+      "antecedent": [
+        "PINK REGENCY TEACUP AND SAUCER",
+        "ROSES REGENCY TEACUP AND SAUCER"
+      ],
+      "consequent": [
+        "GREEN REGENCY TEACUP AND SAUCER"
+      ],
+      "support_count": 541,
+      "support": 0.02737,
+      "confidence": 0.9047,
+      "lift": 17.652
+    },
+    {
+      "antecedent": [
+        "CHARLOTTE BAG PINK POLKADOT",
+        "CHARLOTTE BAG SUKI DESIGN",
+        "STRAWBERRY CHARLOTTE BAG"
+      ],
+      "consequent": [
+        "RED RETROSPOT CHARLOTTE BAG"
+      ],
+      "support_count": 245,
+      "support": 0.0124,
+      "confidence": 0.9041,
+      "lift": 17.316
+    },
+    {
+      "antecedent": [
+        "HERB MARKER PARSLEY"
+      ],
+      "consequent": [
+        "HERB MARKER ROSEMARY"
+      ],
+      "support_count": 215,
+      "support": 0.01088,
+      "confidence": 0.9034,
+      "lift": 74.399
+    },
+    {
+      "antecedent": [
+        "HERB MARKER THYME"
+      ],
+      "consequent": [
+        "HERB MARKER PARSLEY"
+      ],
+      "support_count": 213,
+      "support": 0.01078,
+      "confidence": 0.8987,
+      "lift": 74.64
+    },
+    {
+      "antecedent": [
+        "GREEN REGENCY TEACUP AND SAUCER",
+        "REGENCY TEA PLATE ROSES"
+      ],
+      "consequent": [
+        "REGENCY TEA PLATE GREEN"
+      ],
+      "support_count": 201,
+      "support": 0.01017,
+      "confidence": 0.8973,
+      "lift": 46.552
+    },
+    {
+      "antecedent": [
+        "HERB MARKER ROSEMARY"
+      ],
+      "consequent": [
+        "HERB MARKER PARSLEY"
+      ],
+      "support_count": 215,
+      "support": 0.01088,
+      "confidence": 0.8958,
+      "lift": 74.399
+    },
+    {
+      "antecedent": [
+        "SET/20 RED RETROSPOT PAPER NAPKINS",
+        "SET/6 RED SPOTTY PAPER CUPS"
+      ],
+      "consequent": [
+        "SET/6 RED SPOTTY PAPER PLATES"
+      ],
+      "support_count": 265,
+      "support": 0.01341,
+      "confidence": 0.8953,
+      "lift": 33.579
+    },
+    {
+      "antecedent": [
+        "HERB MARKER PARSLEY"
+      ],
+      "consequent": [
+        "HERB MARKER THYME"
+      ],
+      "support_count": 213,
+      "support": 0.01078,
+      "confidence": 0.895,
+      "lift": 74.64
+    }
+  ],
+  "top_rules_by_lift": [
+    {
+      "antecedent": [
+        "HERB MARKER PARSLEY",
+        "HERB MARKER ROSEMARY"
+      ],
+      "consequent": [
+        "HERB MARKER THYME"
+      ],
+      "support_count": 203,
+      "support": 0.01027,
+      "confidence": 0.9442,
+      "lift": 78.746
+    },
+    {
+      "antecedent": [
+        "HERB MARKER THYME"
+      ],
+      "consequent": [
+        "HERB MARKER PARSLEY",
+        "HERB MARKER ROSEMARY"
+      ],
+      "support_count": 203,
+      "support": 0.01027,
+      "confidence": 0.8565,
+      "lift": 78.746
+    },
+    {
+      "antecedent": [
+        "HERB MARKER PARSLEY",
+        "HERB MARKER THYME"
+      ],
+      "consequent": [
+        "HERB MARKER ROSEMARY"
+      ],
+      "support_count": 203,
+      "support": 0.01027,
+      "confidence": 0.9531,
+      "lift": 78.492
+    },
+    {
+      "antecedent": [
+        "HERB MARKER ROSEMARY"
+      ],
+      "consequent": [
+        "HERB MARKER PARSLEY",
+        "HERB MARKER THYME"
+      ],
+      "support_count": 203,
+      "support": 0.01027,
+      "confidence": 0.8458,
+      "lift": 78.492
+    },
+    {
+      "antecedent": [
+        "HERB MARKER BASIL",
+        "HERB MARKER THYME"
+      ],
+      "consequent": [
+        "HERB MARKER ROSEMARY"
+      ],
+      "support_count": 200,
+      "support": 0.01012,
+      "confidence": 0.9524,
+      "lift": 78.437
+    },
+    {
+      "antecedent": [
+        "HERB MARKER ROSEMARY"
+      ],
+      "consequent": [
+        "HERB MARKER BASIL",
+        "HERB MARKER THYME"
+      ],
+      "support_count": 200,
+      "support": 0.01012,
+      "confidence": 0.8333,
+      "lift": 78.437
+    },
+    {
+      "antecedent": [
+        "HERB MARKER BASIL",
+        "HERB MARKER ROSEMARY"
+      ],
+      "consequent": [
+        "HERB MARKER THYME"
+      ],
+      "support_count": 200,
+      "support": 0.01012,
+      "confidence": 0.9346,
+      "lift": 77.945
+    },
+    {
+      "antecedent": [
+        "HERB MARKER THYME"
+      ],
+      "consequent": [
+        "HERB MARKER BASIL",
+        "HERB MARKER ROSEMARY"
+      ],
+      "support_count": 200,
+      "support": 0.01012,
+      "confidence": 0.8439,
+      "lift": 77.945
+    },
+    {
+      "antecedent": [
+        "HERB MARKER THYME"
+      ],
+      "consequent": [
+        "HERB MARKER ROSEMARY"
+      ],
+      "support_count": 221,
+      "support": 0.01118,
+      "confidence": 0.9325,
+      "lift": 76.798
+    },
+    {
+      "antecedent": [
+        "HERB MARKER ROSEMARY"
+      ],
+      "consequent": [
+        "HERB MARKER THYME"
+      ],
+      "support_count": 221,
+      "support": 0.01118,
+      "confidence": 0.9208,
+      "lift": 76.798
+    }
+  ],
+  "figures": [
+    "fig1_support_vs_frequent_itemsets.png",
+    "fig2_support_vs_candidates.png",
+    "fig3_support_vs_time.png",
+    "fig4_confidence_vs_rules.png",
+    "fig5_pruning_per_level.png",
+    "fig6_scalability_time.png"
+  ]
+}

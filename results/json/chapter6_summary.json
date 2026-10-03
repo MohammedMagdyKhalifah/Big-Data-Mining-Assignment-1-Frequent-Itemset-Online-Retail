@@ -1,0 +1,709 @@
+{
+  "lecture_examples": {
+    "frequent_itemsets_s3": [
+      "{b, c}",
+      "{b, m}",
+      "{b}",
+      "{c, j}",
+      "{c}",
+      "{j}",
+      "{m}"
+    ],
+    "levels_s3": [
+      {
+        "k": 1,
+        "candidates_generated": 5,
+        "candidates_pruned": 0,
+        "candidates_counted": 5,
+        "frequent_itemsets": 4,
+        "seconds": 0.0001
+      },
+      {
+        "k": 2,
+        "candidates_generated": 6,
+        "candidates_pruned": 0,
+        "candidates_counted": 6,
+        "frequent_itemsets": 3,
+        "seconds": 0.0
+      },
+      {
+        "k": 3,
+        "candidates_generated": 1,
+        "candidates_pruned": 1,
+        "candidates_counted": 0,
+        "frequent_itemsets": 0,
+        "seconds": 0.0
+      }
+    ],
+    "rule_mb_to_c": {
+      "confidence": 0.5,
+      "interest": -0.125
+    }
+  },
+  "memory": [
+    {
+      "min_support": 0.005,
+      "frequent_items_m": 1544,
+      "pairs_all_items": 7025626,
+      "triangular_all_items_MB": 28.1,
+      "pairs_frequent_items": 1191196,
+      "triangular_renumbered_MB": 4.765,
+      "occurring_pairs": 1154145,
+      "occurring_pct": 96.9,
+      "triples_MB": 13.85,
+      "better_method": "triangular",
+      "frequent_pairs": 8191,
+      "seconds": 0.831
+    },
+    {
+      "min_support": 0.01,
+      "frequent_items_m": 824,
+      "pairs_all_items": 7025626,
+      "triangular_all_items_MB": 28.1,
+      "pairs_frequent_items": 339076,
+      "triangular_renumbered_MB": 1.356,
+      "occurring_pairs": 337984,
+      "occurring_pct": 99.7,
+      "triples_MB": 4.056,
+      "better_method": "triangular",
+      "frequent_pairs": 902,
+      "seconds": 0.368
+    },
+    {
+      "min_support": 0.02,
+      "frequent_items_m": 299,
+      "pairs_all_items": 7025626,
+      "triangular_all_items_MB": 28.1,
+      "pairs_frequent_items": 44551,
+      "triangular_renumbered_MB": 0.178,
+      "occurring_pairs": 44539,
+      "occurring_pct": 100.0,
+      "triples_MB": 0.534,
+      "better_method": "triangular",
+      "frequent_pairs": 90,
+      "seconds": 0.259
+    }
+  ],
+  "pcy_buckets": [
+    {
+      "algorithm": "PCY",
+      "min_count": 198,
+      "n_buckets": 10000,
+      "passes": 2,
+      "frequent_items": 824,
+      "apriori_candidate_pairs": 339076,
+      "occurring_frequent_item_pairs": 337984,
+      "candidate_pairs": 337984,
+      "frequent_buckets_pct": 100.0,
+      "frequent_buckets_pct_table2": null,
+      "avg_bucket_count": 2800.3,
+      "frequent_pairs": 902,
+      "false_positive_candidates": 337082,
+      "memory_pass2_bytes": 4057058,
+      "seconds": 0.877,
+      "candidates_vs_apriori_pct": 99.68,
+      "apriori_seconds": 1.435
+    },
+    {
+      "algorithm": "Multistage",
+      "min_count": 198,
+      "n_buckets": 20000,
+      "passes": 3,
+      "frequent_items": 824,
+      "apriori_candidate_pairs": 339076,
+      "occurring_frequent_item_pairs": 337984,
+      "candidate_pairs": 337984,
+      "frequent_buckets_pct": 100.0,
+      "frequent_buckets_pct_table2": 100.0,
+      "avg_bucket_count": 2800.3,
+      "frequent_pairs": 902,
+      "false_positive_candidates": 337082,
+      "memory_pass2_bytes": 4058308,
+      "seconds": 1.408,
+      "candidates_vs_apriori_pct": 99.68,
+      "apriori_seconds": 1.435
+    },
+    {
+      "algorithm": "Multihash",
+      "min_count": 198,
+      "n_buckets": 10000,
+      "passes": 2,
+      "frequent_items": 824,
+      "apriori_candidate_pairs": 339076,
+      "occurring_frequent_item_pairs": 337984,
+      "candidate_pairs": 337984,
+      "frequent_buckets_pct": 100.0,
+      "frequent_buckets_pct_table2": 100.0,
+      "avg_bucket_count": 5600.6,
+      "frequent_pairs": 902,
+      "false_positive_candidates": 337082,
+      "memory_pass2_bytes": 4057058,
+      "seconds": 1.154,
+      "candidates_vs_apriori_pct": 99.68,
+      "apriori_seconds": 1.435
+    },
+    {
+      "algorithm": "PCY",
+      "min_count": 198,
+      "n_buckets": 100000,
+      "passes": 2,
+      "frequent_items": 824,
+      "apriori_candidate_pairs": 339076,
+      "occurring_frequent_item_pairs": 337984,
+      "candidate_pairs": 311700,
+      "frequent_buckets_pct": 85.32,
+      "frequent_buckets_pct_table2": null,
+      "avg_bucket_count": 280.0,
+      "frequent_pairs": 902,
+      "false_positive_candidates": 310798,
+      "memory_pass2_bytes": 3752900,
+      "seconds": 0.889,
+      "candidates_vs_apriori_pct": 91.93,
+      "apriori_seconds": 1.435
+    },
+    {
+      "algorithm": "Multistage",
+      "min_count": 198,
+      "n_buckets": 200000,
+      "passes": 3,
+      "frequent_items": 824,
+      "apriori_candidate_pairs": 339076,
+      "occurring_frequent_item_pairs": 337984,
+      "candidate_pairs": 41973,
+      "frequent_buckets_pct": 85.32,
+      "frequent_buckets_pct_table2": 7.93,
+      "avg_bucket_count": 280.0,
+      "frequent_pairs": 902,
+      "false_positive_candidates": 41071,
+      "memory_pass2_bytes": 528676,
+      "seconds": 1.194,
+      "candidates_vs_apriori_pct": 12.38,
+      "apriori_seconds": 1.435
+    },
+    {
+      "algorithm": "Multihash",
+      "min_count": 198,
+      "n_buckets": 100000,
+      "passes": 2,
+      "frequent_items": 824,
+      "apriori_candidate_pairs": 339076,
+      "occurring_frequent_item_pairs": 337984,
+      "candidate_pairs": 337984,
+      "frequent_buckets_pct": 100.0,
+      "frequent_buckets_pct_table2": 100.0,
+      "avg_bucket_count": 560.1,
+      "frequent_pairs": 902,
+      "false_positive_candidates": 337082,
+      "memory_pass2_bytes": 4068308,
+      "seconds": 1.187,
+      "candidates_vs_apriori_pct": 99.68,
+      "apriori_seconds": 1.435
+    },
+    {
+      "algorithm": "PCY",
+      "min_count": 198,
+      "n_buckets": 300000,
+      "passes": 2,
+      "frequent_items": 824,
+      "apriori_candidate_pairs": 339076,
+      "occurring_frequent_item_pairs": 337984,
+      "candidate_pairs": 27364,
+      "frequent_buckets_pct": 3.36,
+      "frequent_buckets_pct_table2": null,
+      "avg_bucket_count": 93.3,
+      "frequent_pairs": 902,
+      "false_positive_candidates": 26462,
+      "memory_pass2_bytes": 365868,
+      "seconds": 0.617,
+      "candidates_vs_apriori_pct": 8.07,
+      "apriori_seconds": 1.435
+    },
+    {
+      "algorithm": "Multistage",
+      "min_count": 198,
+      "n_buckets": 600000,
+      "passes": 3,
+      "frequent_items": 824,
+      "apriori_candidate_pairs": 339076,
+      "occurring_frequent_item_pairs": 337984,
+      "candidate_pairs": 1129,
+      "frequent_buckets_pct": 3.36,
+      "frequent_buckets_pct_table2": 0.33,
+      "avg_bucket_count": 93.3,
+      "frequent_pairs": 902,
+      "false_positive_candidates": 227,
+      "memory_pass2_bytes": 88548,
+      "seconds": 1.023,
+      "candidates_vs_apriori_pct": 0.33,
+      "apriori_seconds": 1.435
+    },
+    {
+      "algorithm": "Multihash",
+      "min_count": 198,
+      "n_buckets": 300000,
+      "passes": 2,
+      "frequent_items": 824,
+      "apriori_candidate_pairs": 339076,
+      "occurring_frequent_item_pairs": 337984,
+      "candidate_pairs": 95948,
+      "frequent_buckets_pct": 36.97,
+      "frequent_buckets_pct_table2": 37.22,
+      "avg_bucket_count": 186.7,
+      "frequent_pairs": 902,
+      "false_positive_candidates": 95046,
+      "memory_pass2_bytes": 1188876,
+      "seconds": 1.072,
+      "candidates_vs_apriori_pct": 28.3,
+      "apriori_seconds": 1.435
+    },
+    {
+      "algorithm": "PCY",
+      "min_count": 198,
+      "n_buckets": 1000000,
+      "passes": 2,
+      "frequent_items": 824,
+      "apriori_candidate_pairs": 339076,
+      "occurring_frequent_item_pairs": 337984,
+      "candidate_pairs": 2352,
+      "frequent_buckets_pct": 0.16,
+      "frequent_buckets_pct_table2": null,
+      "avg_bucket_count": 28.0,
+      "frequent_pairs": 902,
+      "false_positive_candidates": 1450,
+      "memory_pass2_bytes": 153224,
+      "seconds": 0.568,
+      "candidates_vs_apriori_pct": 0.69,
+      "apriori_seconds": 1.435
+    },
+    {
+      "algorithm": "Multistage",
+      "min_count": 198,
+      "n_buckets": 2000000,
+      "passes": 3,
+      "frequent_items": 824,
+      "apriori_candidate_pairs": 339076,
+      "occurring_frequent_item_pairs": 337984,
+      "candidate_pairs": 904,
+      "frequent_buckets_pct": 0.16,
+      "frequent_buckets_pct_table2": 0.09,
+      "avg_bucket_count": 28.0,
+      "frequent_pairs": 902,
+      "false_positive_candidates": 2,
+      "memory_pass2_bytes": 260848,
+      "seconds": 0.979,
+      "candidates_vs_apriori_pct": 0.27,
+      "apriori_seconds": 1.435
+    },
+    {
+      "algorithm": "Multihash",
+      "min_count": 198,
+      "n_buckets": 1000000,
+      "passes": 2,
+      "frequent_items": 824,
+      "apriori_candidate_pairs": 339076,
+      "occurring_frequent_item_pairs": 337984,
+      "candidate_pairs": 1970,
+      "frequent_buckets_pct": 0.69,
+      "frequent_buckets_pct_table2": 0.79,
+      "avg_bucket_count": 56.0,
+      "frequent_pairs": 902,
+      "false_positive_candidates": 1068,
+      "memory_pass2_bytes": 148640,
+      "seconds": 0.869,
+      "candidates_vs_apriori_pct": 0.58,
+      "apriori_seconds": 1.435
+    },
+    {
+      "algorithm": "PCY",
+      "min_count": 198,
+      "n_buckets": 4000000,
+      "passes": 2,
+      "frequent_items": 824,
+      "apriori_candidate_pairs": 339076,
+      "occurring_frequent_item_pairs": 337984,
+      "candidate_pairs": 1065,
+      "frequent_buckets_pct": 0.02,
+      "frequent_buckets_pct_table2": null,
+      "avg_bucket_count": 7.0,
+      "frequent_pairs": 902,
+      "false_positive_candidates": 163,
+      "memory_pass2_bytes": 512780,
+      "seconds": 0.605,
+      "candidates_vs_apriori_pct": 0.31,
+      "apriori_seconds": 1.435
+    },
+    {
+      "algorithm": "Multistage",
+      "min_count": 198,
+      "n_buckets": 8000000,
+      "passes": 3,
+      "frequent_items": 824,
+      "apriori_candidate_pairs": 339076,
+      "occurring_frequent_item_pairs": 337984,
+      "candidate_pairs": 902,
+      "frequent_buckets_pct": 0.02,
+      "frequent_buckets_pct_table2": 0.02,
+      "avg_bucket_count": 7.0,
+      "frequent_pairs": 902,
+      "false_positive_candidates": 0,
+      "memory_pass2_bytes": 1010824,
+      "seconds": 1.06,
+      "candidates_vs_apriori_pct": 0.27,
+      "apriori_seconds": 1.435
+    },
+    {
+      "algorithm": "Multihash",
+      "min_count": 198,
+      "n_buckets": 4000000,
+      "passes": 2,
+      "frequent_items": 824,
+      "apriori_candidate_pairs": 339076,
+      "occurring_frequent_item_pairs": 337984,
+      "candidate_pairs": 1017,
+      "frequent_buckets_pct": 0.06,
+      "frequent_buckets_pct_table2": 0.08,
+      "avg_bucket_count": 14.0,
+      "frequent_pairs": 902,
+      "false_positive_candidates": 115,
+      "memory_pass2_bytes": 512204,
+      "seconds": 0.894,
+      "candidates_vs_apriori_pct": 0.3,
+      "apriori_seconds": 1.435
+    }
+  ],
+  "apriori_pass12_seconds": 1.435,
+  "pcy_support": [
+    {
+      "min_support": 0.005,
+      "min_count": 99,
+      "frequent_items": 1544,
+      "apriori_candidate_pairs": 1191196,
+      "pcy_candidate_pairs": 53930,
+      "frequent_buckets_pct": 2.19,
+      "frequent_pairs": 8191,
+      "reduction_factor": 22.1
+    },
+    {
+      "min_support": 0.0075,
+      "min_count": 149,
+      "frequent_items": 1091,
+      "apriori_candidate_pairs": 594595,
+      "pcy_candidate_pairs": 8954,
+      "frequent_buckets_pct": 0.48,
+      "frequent_pairs": 2290,
+      "reduction_factor": 66.4
+    },
+    {
+      "min_support": 0.01,
+      "min_count": 198,
+      "frequent_items": 824,
+      "apriori_candidate_pairs": 339076,
+      "pcy_candidate_pairs": 2352,
+      "frequent_buckets_pct": 0.16,
+      "frequent_pairs": 902,
+      "reduction_factor": 144.2
+    },
+    {
+      "min_support": 0.015,
+      "min_count": 297,
+      "frequent_items": 479,
+      "apriori_candidate_pairs": 114481,
+      "pcy_candidate_pairs": 375,
+      "frequent_buckets_pct": 0.03,
+      "frequent_pairs": 240,
+      "reduction_factor": 305.3
+    },
+    {
+      "min_support": 0.02,
+      "min_count": 396,
+      "frequent_items": 299,
+      "apriori_candidate_pairs": 44551,
+      "pcy_candidate_pairs": 112,
+      "frequent_buckets_pct": 0.01,
+      "frequent_pairs": 90,
+      "reduction_factor": 397.8
+    }
+  ],
+  "compact": [
+    {
+      "min_support": 0.005,
+      "frequent_itemsets": 17235,
+      "closed": 17235,
+      "maximal": 11259,
+      "maximal_pct": 65.3
+    },
+    {
+      "min_support": 0.0075,
+      "frequent_itemsets": 4518,
+      "closed": 4518,
+      "maximal": 3121,
+      "maximal_pct": 69.1
+    },
+    {
+      "min_support": 0.01,
+      "frequent_itemsets": 2013,
+      "closed": 2013,
+      "maximal": 1446,
+      "maximal_pct": 71.8
+    },
+    {
+      "min_support": 0.015,
+      "frequent_itemsets": 758,
+      "closed": 758,
+      "maximal": 580,
+      "maximal_pct": 76.5
+    },
+    {
+      "min_support": 0.02,
+      "frequent_itemsets": 392,
+      "closed": 392,
+      "maximal": 323,
+      "maximal_pct": 82.4
+    }
+  ],
+  "compact_examples": [
+    {
+      "itemset": "{REGENCY TEA PLATE GREEN}",
+      "count": 381,
+      "closed": true,
+      "maximal": false,
+      "frequent_immediate_supersets": [
+        [
+          "{GREEN REGENCY TEACUP AND SAUCER, REGENCY TEA PLATE GREEN}",
+          243
+        ],
+        [
+          "{PINK REGENCY TEACUP AND SAUCER, REGENCY TEA PLATE GREEN}",
+          198
+        ],
+        [
+          "{REGENCY TEA PLATE GREEN, REGENCY TEA PLATE PINK}",
+          278
+        ],
+        [
+          "{REGENCY TEA PLATE GREEN, REGENCY TEA PLATE ROSES}",
+          319
+        ],
+        [
+          "{REGENCY TEA PLATE GREEN, ROSES REGENCY TEACUP AND SAUCER}",
+          228
+        ]
+      ]
+    },
+    {
+      "itemset": "{REGENCY TEA PLATE GREEN, REGENCY TEA PLATE PINK}",
+      "count": 278,
+      "closed": true,
+      "maximal": false,
+      "frequent_immediate_supersets": [
+        [
+          "{REGENCY TEA PLATE GREEN, REGENCY TEA PLATE PINK, REGENCY TEA PLATE ROSES}",
+          255
+        ]
+      ]
+    },
+    {
+      "itemset": "{REGENCY TEA PLATE GREEN, REGENCY TEA PLATE PINK, REGENCY TEA PLATE ROSES}",
+      "count": 255,
+      "closed": true,
+      "maximal": true,
+      "frequent_immediate_supersets": []
+    },
+    {
+      "itemset": "{HERB MARKER ROSEMARY, HERB MARKER THYME}",
+      "count": 221,
+      "closed": true,
+      "maximal": false,
+      "frequent_immediate_supersets": [
+        [
+          "{HERB MARKER BASIL, HERB MARKER ROSEMARY, HERB MARKER THYME}",
+          200
+        ],
+        [
+          "{HERB MARKER PARSLEY, HERB MARKER ROSEMARY, HERB MARKER THYME}",
+          203
+        ]
+      ]
+    }
+  ],
+  "interest": {
+    "rules_at_conf_50": 962,
+    "rules_interest_gt_0_5": 761,
+    "negative_interest_rules": 0,
+    "min_interest": 0.3952,
+    "max_interest": 0.9409,
+    "bands": [
+      {
+        "interest_band": "0.0-0.3",
+        "rules": 0
+      },
+      {
+        "interest_band": "0.3-0.5",
+        "rules": 201
+      },
+      {
+        "interest_band": "0.5-0.7",
+        "rules": 597
+      },
+      {
+        "interest_band": "0.7-1.0",
+        "rules": 164
+      }
+    ],
+    "top_by_interest": [
+      {
+        "antecedent": "{HERB MARKER PARSLEY, HERB MARKER THYME}",
+        "consequent": "{HERB MARKER ROSEMARY}",
+        "support_count": 203,
+        "support": 0.01027,
+        "confidence": 0.9531,
+        "lift": 78.492,
+        "interest": 0.9409
+      },
+      {
+        "antecedent": "{HERB MARKER BASIL, HERB MARKER THYME}",
+        "consequent": "{HERB MARKER ROSEMARY}",
+        "support_count": 200,
+        "support": 0.01012,
+        "confidence": 0.9524,
+        "lift": 78.437,
+        "interest": 0.9402
+      },
+      {
+        "antecedent": "{HERB MARKER PARSLEY, HERB MARKER ROSEMARY}",
+        "consequent": "{HERB MARKER THYME}",
+        "support_count": 203,
+        "support": 0.01027,
+        "confidence": 0.9442,
+        "lift": 78.746,
+        "interest": 0.9322
+      },
+      {
+        "antecedent": "{REGENCY TEA PLATE PINK, REGENCY TEA PLATE ROSES}",
+        "consequent": "{REGENCY TEA PLATE GREEN}",
+        "support_count": 255,
+        "support": 0.0129,
+        "confidence": 0.948,
+        "lift": 49.179,
+        "interest": 0.9287
+      },
+      {
+        "antecedent": "{HERB MARKER BASIL, HERB MARKER ROSEMARY}",
+        "consequent": "{HERB MARKER THYME}",
+        "support_count": 200,
+        "support": 0.01012,
+        "confidence": 0.9346,
+        "lift": 77.945,
+        "interest": 0.9226
+      },
+      {
+        "antecedent": "{HERB MARKER THYME}",
+        "consequent": "{HERB MARKER ROSEMARY}",
+        "support_count": 221,
+        "support": 0.01118,
+        "confidence": 0.9325,
+        "lift": 76.798,
+        "interest": 0.9203
+      },
+      {
+        "antecedent": "{HERB MARKER ROSEMARY}",
+        "consequent": "{HERB MARKER THYME}",
+        "support_count": 221,
+        "support": 0.01118,
+        "confidence": 0.9208,
+        "lift": 76.798,
+        "interest": 0.9088
+      },
+      {
+        "antecedent": "{HERB MARKER ROSEMARY, HERB MARKER THYME}",
+        "consequent": "{HERB MARKER PARSLEY}",
+        "support_count": 203,
+        "support": 0.01027,
+        "confidence": 0.9186,
+        "lift": 76.286,
+        "interest": 0.9065
+      },
+      {
+        "antecedent": "{WOODEN HEART CHRISTMAS SCANDINAVIAN, WOODEN TREE CHRISTMAS SCANDINAVIAN}",
+        "consequent": "{WOODEN STAR CHRISTMAS SCANDINAVIAN}",
+        "support_count": 231,
+        "support": 0.01169,
+        "confidence": 0.9277,
+        "lift": 35.815,
+        "interest": 0.9018
+      },
+      {
+        "antecedent": "{REGENCY TEA PLATE GREEN, REGENCY TEA PLATE PINK}",
+        "consequent": "{REGENCY TEA PLATE ROSES}",
+        "support_count": 255,
+        "support": 0.0129,
+        "confidence": 0.9173,
+        "lift": 40.743,
+        "interest": 0.8948
+      }
+    ],
+    "lowest_interest": [
+      {
+        "antecedent": "{RED RETROSPOT SHOPPER BAG}",
+        "consequent": "{JUMBO BAG RED RETROSPOT}",
+        "support_count": 288,
+        "support": 0.01457,
+        "confidence": 0.5009,
+        "lift": 4.739,
+        "interest": 0.3952
+      },
+      {
+        "antecedent": "{GREEN REGENCY TEACUP AND SAUCER}",
+        "consequent": "{REGENCY CAKESTAND 3 TIER}",
+        "support_count": 509,
+        "support": 0.02575,
+        "confidence": 0.5025,
+        "lift": 4.996,
+        "interest": 0.4019
+      },
+      {
+        "antecedent": "{PINK REGENCY TEACUP AND SAUCER}",
+        "consequent": "{REGENCY CAKESTAND 3 TIER}",
+        "support_count": 392,
+        "support": 0.01983,
+        "confidence": 0.5124,
+        "lift": 5.095,
+        "interest": 0.4118
+      },
+      {
+        "antecedent": "{TOY TIDY PINK POLKADOT}",
+        "consequent": "{JUMBO BAG RED RETROSPOT}",
+        "support_count": 244,
+        "support": 0.01234,
+        "confidence": 0.5203,
+        "lift": 4.923,
+        "interest": 0.4146
+      },
+      {
+        "antecedent": "{LUNCH BAG BLACK SKULL.}",
+        "consequent": "{LUNCH BAG RED RETROSPOT}",
+        "support_count": 641,
+        "support": 0.03243,
+        "confidence": 0.5035,
+        "lift": 6.36,
+        "interest": 0.4244
+      }
+    ],
+    "highest_confidence": [
+      {
+        "antecedent": "{HERB MARKER PARSLEY, HERB MARKER THYME}",
+        "consequent": "{HERB MARKER ROSEMARY}",
+        "support_count": 203,
+        "support": 0.01027,
+        "confidence": 0.9531,
+        "lift": 78.492,
+        "interest": 0.9409
+      }
+    ]
+  },
+  "figures": [
+    "fig7_pcy_buckets_vs_candidates.png",
+    "fig8_maximal_closed.png",
+    "fig9_interest_vs_confidence.png"
+  ]
+}

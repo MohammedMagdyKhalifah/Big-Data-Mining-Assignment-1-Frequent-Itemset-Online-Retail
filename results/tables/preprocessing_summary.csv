@@ -1,0 +1,12 @@
+Step,Rows Before,Rows Removed,Values Changed,Rows After,Reason
+1. Remove exact duplicate rows,541909,5268,0,536641,Identical invoice lines (all 8 fields equal) are data-entry duplicates and add no new purchase.
+2. Remove cancelled invoices (InvoiceNo starts with 'C'),536641,9251,0,527390,Cancellations/returns are not purchases; the products were not bought together.
+3. Remove non-standard invoice numbers (e.g. 'A563185'),527390,3,0,527387,"'A' invoices are accounting adjustments ('Adjust bad debt'), not customer orders."
+4. Remove rows with missing product description,527387,1454,0,525933,Without a description the item cannot be identified or interpreted.
+5. Remove rows with Quantity <= 0,525933,474,0,525459,"Zero/negative quantities are stock corrections (e.g. 'damaged', 'lost'), not sales."
+6. Remove rows with UnitPrice <= 0,525459,582,0,524877,Free or negative-price lines are internal adjustments rather than customer purchases.
+"7. Remove non-product stock codes (POSTAGE, CARRIAGE, fees, vouchers, ...)",524877,2337,0,522540,Postage and fees appear in many baskets for administrative reasons and would create meaningless rules such as {X} -> {POSTAGE}.
+"8. Standardise descriptions (trim, collapse spaces, upper-case)",522540,0,126548,522540,Leading/trailing/double spaces and mixed case make the same product look like different items.
+9. Map each StockCode to one canonical description,522540,0,6555,522540,Some stock codes have several spellings; the most frequent one is used as the item name.
+10. Appropriateness (Halaal) filter on descriptions,522540,3442,0,519098,"Whole-word keywords WINE, GIN, CHAMPAGNE, COCKTAIL, BOOZE, ASHTRAY, CIGAR, SPLIFF (alcohol- or smoking-themed items) are excluded; the affected products are listed in excluded_products.csv."
+11. Collapse repeated items within the same invoice,519098,5535,0,513563,A basket is a set: buying the same product on two lines is still one item.

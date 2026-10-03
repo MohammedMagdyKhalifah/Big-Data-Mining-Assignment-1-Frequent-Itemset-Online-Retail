@@ -1,0 +1,72 @@
+[
+  {
+    "min_confidence": 0.3,
+    "rules": 1938,
+    "rules_from_pairs": 755,
+    "rules_from_3plus": 1183,
+    "avg_confidence": 0.5205,
+    "avg_lift": 13.679,
+    "min_lift": 2.65,
+    "strongest_rule": "{HERB MARKER PARSLEY, HERB MARKER THYME} -> {HERB MARKER ROSEMARY}"
+  },
+  {
+    "min_confidence": 0.4,
+    "rules": 1402,
+    "rules_from_pairs": 455,
+    "rules_from_3plus": 947,
+    "avg_confidence": 0.5862,
+    "avg_lift": 15.247,
+    "min_lift": 3.53,
+    "strongest_rule": "{HERB MARKER PARSLEY, HERB MARKER THYME} -> {HERB MARKER ROSEMARY}"
+  },
+  {
+    "min_confidence": 0.5,
+    "rules": 962,
+    "rules_from_pairs": 252,
+    "rules_from_3plus": 710,
+    "avg_confidence": 0.6495,
+    "avg_lift": 16.957,
+    "min_lift": 4.739,
+    "strongest_rule": "{HERB MARKER PARSLEY, HERB MARKER THYME} -> {HERB MARKER ROSEMARY}"
+  },
+  {
+    "min_confidence": 0.6,
+    "rules": 574,
+    "rules_from_pairs": 122,
+    "rules_from_3plus": 452,
+    "avg_confidence": 0.7173,
+    "avg_lift": 19.306,
+    "min_lift": 5.687,
+    "strongest_rule": "{HERB MARKER PARSLEY, HERB MARKER THYME} -> {HERB MARKER ROSEMARY}"
+  },
+  {
+    "min_confidence": 0.7,
+    "rules": 289,
+    "rules_from_pairs": 59,
+    "rules_from_3plus": 230,
+    "avg_confidence": 0.7876,
+    "avg_lift": 23.326,
+    "min_lift": 6.241,
+    "strongest_rule": "{HERB MARKER PARSLEY, HERB MARKER THYME} -> {HERB MARKER ROSEMARY}"
+  },
+  {
+    "min_confidence": 0.8,
+    "rules": 109,
+    "rules_from_pairs": 28,
+    "rules_from_3plus": 81,
+    "avg_confidence": 0.859,
+    "avg_lift": 35.707,
+    "min_lift": 7.577,
+    "strongest_rule": "{HERB MARKER PARSLEY, HERB MARKER THYME} -> {HERB MARKER ROSEMARY}"
+  },
+  {
+    "min_confidence": 0.9,
+    "rules": 20,
+    "rules_from_pairs": 4,
+    "rules_from_3plus": 16,
+    "avg_confidence": 0.922,
+    "avg_lift": 50.496,
+    "min_lift": 16.82,
+    "strongest_rule": "{HERB MARKER PARSLEY, HERB MARKER THYME} -> {HERB MARKER ROSEMARY}"
+  }
+]

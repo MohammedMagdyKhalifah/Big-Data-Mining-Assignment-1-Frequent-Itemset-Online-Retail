@@ -1,0 +1,236 @@
+{
+  "dataset": "UCI Online Retail (Chen, 2015)",
+  "raw_quality": {
+    "rows": 541909,
+    "columns": [
+      "InvoiceNo",
+      "StockCode",
+      "Description",
+      "Quantity",
+      "InvoiceDate",
+      "UnitPrice",
+      "CustomerID",
+      "Country"
+    ],
+    "dtypes": {
+      "InvoiceNo": "str",
+      "StockCode": "str",
+      "Description": "object",
+      "Quantity": "int64",
+      "InvoiceDate": "datetime64[us]",
+      "UnitPrice": "float64",
+      "CustomerID": "float64",
+      "Country": "str"
+    },
+    "missing_values": {
+      "InvoiceNo": 0,
+      "StockCode": 0,
+      "Description": 1454,
+      "Quantity": 0,
+      "InvoiceDate": 0,
+      "UnitPrice": 0,
+      "CustomerID": 135080,
+      "Country": 0
+    },
+    "exact_duplicate_rows": 5268,
+    "unique_invoices": 25900,
+    "unique_stock_codes": 3958,
+    "unique_descriptions": 4223,
+    "cancelled_invoice_rows": 9288,
+    "adjustment_invoice_rows": 3,
+    "quantity_le_zero": 10624,
+    "unit_price_le_zero": 2517,
+    "unit_price_negative": 2,
+    "descriptions_with_extra_whitespace": 128367,
+    "descriptions_not_upper_case": 3036,
+    "stock_codes_with_multiple_descriptions": 642,
+    "non_numeric_stock_code_rows": 2995,
+    "non_numeric_stock_code_top": {
+      "POST": 1256,
+      "DOT": 710,
+      "M": 572,
+      "C2": 144,
+      "D": 77,
+      "S": 63,
+      "BANK CHARGES": 37,
+      "AMAZONFEE": 34,
+      "CRUK": 16,
+      "DCGSSGIRL": 13,
+      "DCGSSBOY": 11,
+      "GIFT_0001_20": 10,
+      "GIFT_0001_10": 9,
+      "GIFT_0001_30": 8,
+      "DCGS0003": 5
+    },
+    "repeated_product_lines_within_invoice": 10684,
+    "date_range": [
+      "2010-12-01 08:26:00",
+      "2011-12-09 12:50:00"
+    ],
+    "countries": 38
+  },
+  "cleaned_rows": 519098,
+  "cleaning_steps": [
+    {
+      "Step": "1. Remove exact duplicate rows",
+      "Rows Before": 541909,
+      "Rows Removed": 5268,
+      "Values Changed": 0,
+      "Rows After": 536641,
+      "Reason": "Identical invoice lines (all 8 fields equal) are data-entry duplicates and add no new purchase."
+    },
+    {
+      "Step": "2. Remove cancelled invoices (InvoiceNo starts with 'C')",
+      "Rows Before": 536641,
+      "Rows Removed": 9251,
+      "Values Changed": 0,
+      "Rows After": 527390,
+      "Reason": "Cancellations/returns are not purchases; the products were not bought together."
+    },
+    {
+      "Step": "3. Remove non-standard invoice numbers (e.g. 'A563185')",
+      "Rows Before": 527390,
+      "Rows Removed": 3,
+      "Values Changed": 0,
+      "Rows After": 527387,
+      "Reason": "'A' invoices are accounting adjustments ('Adjust bad debt'), not customer orders."
+    },
+    {
+      "Step": "4. Remove rows with missing product description",
+      "Rows Before": 527387,
+      "Rows Removed": 1454,
+      "Values Changed": 0,
+      "Rows After": 525933,
+      "Reason": "Without a description the item cannot be identified or interpreted."
+    },
+    {
+      "Step": "5. Remove rows with Quantity <= 0",
+      "Rows Before": 525933,
+      "Rows Removed": 474,
+      "Values Changed": 0,
+      "Rows After": 525459,
+      "Reason": "Zero/negative quantities are stock corrections (e.g. 'damaged', 'lost'), not sales."
+    },
+    {
+      "Step": "6. Remove rows with UnitPrice <= 0",
+      "Rows Before": 525459,
+      "Rows Removed": 582,
+      "Values Changed": 0,
+      "Rows After": 524877,
+      "Reason": "Free or negative-price lines are internal adjustments rather than customer purchases."
+    },
+    {
+      "Step": "7. Remove non-product stock codes (POSTAGE, CARRIAGE, fees, vouchers, ...)",
+      "Rows Before": 524877,
+      "Rows Removed": 2337,
+      "Values Changed": 0,
+      "Rows After": 522540,
+      "Reason": "Postage and fees appear in many baskets for administrative reasons and would create meaningless rules such as {X} -> {POSTAGE}."
+    },
+    {
+      "Step": "8. Standardise descriptions (trim, collapse spaces, upper-case)",
+      "Rows Before": 522540,
+      "Rows Removed": 0,
+      "Values Changed": 126548,
+      "Rows After": 522540,
+      "Reason": "Leading/trailing/double spaces and mixed case make the same product look like different items."
+    },
+    {
+      "Step": "9. Map each StockCode to one canonical description",
+      "Rows Before": 522540,
+      "Rows Removed": 0,
+      "Values Changed": 6555,
+      "Rows After": 522540,
+      "Reason": "Some stock codes have several spellings; the most frequent one is used as the item name."
+    },
+    {
+      "Step": "10. Appropriateness (Halaal) filter on descriptions",
+      "Rows Before": 522540,
+      "Rows Removed": 3442,
+      "Values Changed": 0,
+      "Rows After": 519098,
+      "Reason": "Whole-word keywords WINE, GIN, CHAMPAGNE, COCKTAIL, BOOZE, ASHTRAY, CIGAR, SPLIFF (alcohol- or smoking-themed items) are excluded; the affected products are listed in excluded_products.csv."
+    },
+    {
+      "Step": "11. Collapse repeated items within the same invoice",
+      "Rows Before": 519098,
+      "Rows Removed": 5535,
+      "Values Changed": 0,
+      "Rows After": 513563,
+      "Reason": "A basket is a set: buying the same product on two lines is still one item."
+    }
+  ],
+  "baskets": {
+    "transactions": 19766,
+    "unique_items": 3749,
+    "mean_basket_size": 25.98,
+    "median_basket_size": 15.0,
+    "max_basket_size": 1100,
+    "single_item_baskets": 1508
+  },
+  "cleaned_countries": 38,
+  "cleaned_customers_missing_id_rows": 130673,
+  "top_items": [
+    {
+      "item": "WHITE HANGING HEART T-LIGHT HOLDER",
+      "baskets": 2265
+    },
+    {
+      "item": "JUMBO BAG RED RETROSPOT",
+      "baskets": 2089
+    },
+    {
+      "item": "REGENCY CAKESTAND 3 TIER",
+      "baskets": 1988
+    },
+    {
+      "item": "PARTY BUNTING",
+      "baskets": 1685
+    },
+    {
+      "item": "LUNCH BAG RED RETROSPOT",
+      "baskets": 1565
+    },
+    {
+      "item": "ASSORTED COLOUR BIRD ORNAMENT",
+      "baskets": 1455
+    },
+    {
+      "item": "POPCORN HOLDER",
+      "baskets": 1392
+    },
+    {
+      "item": "SET OF 3 CAKE TINS PANTRY DESIGN",
+      "baskets": 1385
+    },
+    {
+      "item": "PACK OF 72 RETROSPOT CAKE CASES",
+      "baskets": 1320
+    },
+    {
+      "item": "LUNCH BAG SUKI DESIGN",
+      "baskets": 1284
+    },
+    {
+      "item": "LUNCH BAG BLACK SKULL.",
+      "baskets": 1273
+    },
+    {
+      "item": "NATURAL SLATE HEART CHALKBOARD",
+      "baskets": 1249
+    },
+    {
+      "item": "JUMBO BAG VINTAGE DOILY",
+      "baskets": 1231
+    },
+    {
+      "item": "JUMBO BAG PINK POLKADOT",
+      "baskets": 1218
+    },
+    {
+      "item": "HEART OF WICKER SMALL",
+      "baskets": 1201
+    }
+  ],
+  "excluded_products": 22
+}

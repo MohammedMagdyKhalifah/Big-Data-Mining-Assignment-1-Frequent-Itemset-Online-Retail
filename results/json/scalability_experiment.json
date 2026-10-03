@@ -1,0 +1,52 @@
+[
+  {
+    "transactions": 2500,
+    "min_support_count": 25,
+    "distinct_items": 3311,
+    "item_occurrences": 64856,
+    "candidates_counted": 346796,
+    "frequent_itemsets": 2801,
+    "seconds": 0.317,
+    "ms_per_1000_transactions": 126.6
+  },
+  {
+    "transactions": 5000,
+    "min_support_count": 50,
+    "distinct_items": 3514,
+    "item_occurrences": 129326,
+    "candidates_counted": 346328,
+    "frequent_itemsets": 2312,
+    "seconds": 0.509,
+    "ms_per_1000_transactions": 101.9
+  },
+  {
+    "transactions": 10000,
+    "min_support_count": 100,
+    "distinct_items": 3667,
+    "item_occurrences": 257733,
+    "candidates_counted": 337273,
+    "frequent_itemsets": 2029,
+    "seconds": 0.849,
+    "ms_per_1000_transactions": 84.9
+  },
+  {
+    "transactions": 15000,
+    "min_support_count": 150,
+    "distinct_items": 3721,
+    "item_occurrences": 391596,
+    "candidates_counted": 346423,
+    "frequent_itemsets": 2072,
+    "seconds": 1.268,
+    "ms_per_1000_transactions": 84.6
+  },
+  {
+    "transactions": 19766,
+    "min_support_count": 198,
+    "distinct_items": 3749,
+    "item_occurrences": 513563,
+    "candidates_counted": 342221,
+    "frequent_itemsets": 2013,
+    "seconds": 1.603,
+    "ms_per_1000_transactions": 81.1
+  }
+]

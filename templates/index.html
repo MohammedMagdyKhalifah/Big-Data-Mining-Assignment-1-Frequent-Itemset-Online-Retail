@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Online Retail Frequent Itemset Mining</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- ============ Top bar ============ -->
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="6" cy="7" r="3"/><circle cx="18" cy="7" r="3"/><circle cx="12" cy="17" r="3"/><path d="M8.5 8.5 11 15M15.5 8.5 13 15M9 7h6"/></svg>
+      </span>
+      Apriori · Online Retail
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#dataset">Dataset</a>
+      <a href="#analysis">Run Apriori</a>
+      <a href="#experiments">Experiments</a>
+      <a href="#algorithm">Algorithm</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ Hero ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">CSD 5113 Big Data Mining · Assignment 1 · Chapter 6: Frequent Itemsets</p>
+    <h1>Frequent Itemset Mining and Association Rule Analysis in Online Retail Transactions Using the Apriori Algorithm</h1>
+    <p class="lede">
+      Which products do customers buy together? One year of invoices from the
+      <a href="https://archive.ics.uci.edu/dataset/352/online+retail" target="_blank" rel="noopener">UCI Online Retail dataset</a>
+      is mined with a hand-written Apriori implementation. Each <strong>invoice is a basket</strong> and each <strong>product is an item</strong>.
+    </p>
+    <div class="kpis" id="hero-kpis" aria-live="polite">
+      <div class="kpi skeleton"></div><div class="kpi skeleton"></div><div class="kpi skeleton"></div><div class="kpi skeleton"></div><div class="kpi skeleton"></div>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <!-- ============ 1. Dataset ============ -->
+  <section id="dataset" class="panel">
+    <div class="panel-head">
+      <span class="step-no">1</span>
+      <div>
+        <h2>Dataset &amp; preprocessing</h2>
+        <p class="muted">Every cleaning step was measured before it was applied. Rows removed are shown relative to the largest step.</p>
+      </div>
+    </div>
+
+    <div class="table-wrap"><table id="prep-table" class="data"></table></div>
+
+    <details class="disclosure">
+      <summary>Raw data-quality checks <span class="muted">(before cleaning)</span></summary>
+      <div class="table-wrap"><table id="quality-table" class="data"></table></div>
+    </details>
+  </section>
+
+  <!-- ============ 2. Interactive analysis ============ -->
+  <section id="analysis" class="panel">
+    <div class="panel-head">
+      <span class="step-no">2</span>
+      <div>
+        <h2>Run Apriori</h2>
+        <p class="muted">Choose the thresholds and press <em>Run Analysis</em>. The Flask backend runs the manual Apriori on the selected baskets.</p>
+      </div>
+    </div>
+
+    <form id="analyze-form" class="controls" novalidate>
+      <div class="control">
+        <div class="control-top">
+          <label for="min-support">Minimum support</label>
+          <output id="support-out" class="control-value"></output>
+        </div>
+        <input type="range" id="support-range" min="0.005" max="0.05" step="0.0025" value="0.02" aria-label="Minimum support slider">
+        <div class="control-row">
+          <input type="number" id="min-support" value="0.02" min="0.005" max="1" step="0.0025" required>
+          <div class="presets" data-target="min-support">
+            <button type="button" data-value="0.005">0.5%</button>
+            <button type="button" data-value="0.01">1%</button>
+            <button type="button" data-value="0.02">2%</button>
+            <button type="button" data-value="0.05">5%</button>
+          </div>
+        </div>
+        <p class="hint" id="mincount-hint">&nbsp;</p>
+      </div>
+
+      <div class="control">
+        <div class="control-top">
+          <label for="min-confidence">Minimum confidence</label>
+          <output id="confidence-out" class="control-value"></output>
+        </div>
+        <input type="range" id="confidence-range" min="0" max="1" step="0.05" value="0.5" aria-label="Minimum confidence slider">
+        <div class="control-row">
+          <input type="number" id="min-confidence" value="0.5" min="0" max="1" step="0.05" required>
+          <div class="presets" data-target="min-confidence">
+            <button type="button" data-value="0.3">30%</button>
+            <button type="button" data-value="0.5">50%</button>
+            <button type="button" data-value="0.7">70%</button>
+            <button type="button" data-value="0.9">90%</button>
+          </div>
+        </div>
+        <p class="hint">Keep rules X → Y with confidence ≥ this value</p>
+      </div>
+
+      <div class="control">
+        <div class="control-top">
+          <label for="sample-size">Transactions</label>
+          <output id="sample-out" class="control-value"></output>
+        </div>
+        <input type="range" id="sample-range" min="100" step="1" aria-label="Sample size slider">
+        <div class="control-row">
+          <input type="number" id="sample-size" min="100" step="1" required>
+          <div class="presets" data-target="sample-size" id="sample-presets">
+            <button type="button" data-value="2500">2.5k</button>
+            <button type="button" data-value="5000">5k</button>
+            <button type="button" data-value="10000">10k</button>
+            <button type="button" data-value="all">All</button>
+          </div>
+        </div>
+        <p class="hint" id="sample-hint">Random sample of baskets (seed 42)</p>
+      </div>
+
+      <div class="control-submit">
+        <button type="submit" id="run-btn" class="btn-primary">
+          <span class="spinner" aria-hidden="true"></span><span class="btn-label">Run Analysis</span>
+        </button>
+        <p id="run-status" class="status" role="status"></p>
+      </div>
+    </form>
+
+    <div id="analysis-results" hidden>
+      <div class="kpis compact" id="run-kpis"></div>
+
+      <h3>Level by level: join → prune → count → filter</h3>
+      <div class="legend" aria-hidden="true">
+        <span><i class="sw sw-frequent"></i>Frequent</span>
+        <span><i class="sw sw-counted"></i>Counted, not frequent</span>
+        <span><i class="sw sw-pruned"></i>Pruned without counting</span>
+      </div>
+      <div id="levels" class="levels"></div>
+      <div id="pruned-example"></div>
+
+      <div class="tabs" role="tablist" data-tabs="results">
+        <button type="button" role="tab" aria-selected="true" data-panel="tab-itemsets">Frequent itemsets <span class="count" id="itemsets-count"></span></button>
+        <button type="button" role="tab" aria-selected="false" data-panel="tab-rules">Association rules <span class="count" id="rules-count"></span></button>
+      </div>
+
+      <div id="tab-itemsets" role="tabpanel" class="tabpanel">
+        <div class="table-tools">
+          <input type="search" id="itemset-filter" placeholder="Filter by product…" aria-label="Filter itemsets by product">
+          <label class="check"><input type="checkbox" id="multi-only" checked> Only itemsets with ≥ 2 items</label>
+        </div>
+        <div class="table-wrap tall"><table id="itemsets-table" class="data sortable"></table></div>
+      </div>
+
+      <div id="tab-rules" role="tabpanel" class="tabpanel" hidden>
+        <p class="muted small" id="rule-summary"></p>
+        <div class="table-tools">
+          <input type="search" id="rule-filter" placeholder="Filter by product…" aria-label="Filter rules by product">
+        </div>
+        <div class="table-wrap tall"><table id="rules-table" class="data sortable"></table></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. Experiments ============ -->
+  <section id="experiments" class="panel">
+    <div class="panel-head">
+      <span class="step-no">3</span>
+      <div>
+        <h2>Experiments</h2>
+        <p class="muted" id="exp-env">Pre-computed on the full cleaned dataset with <code>python -m src.experiments</code>.</p>
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist" data-tabs="experiments">
+      <button type="button" role="tab" aria-selected="true" data-panel="exp-support">Minimum support</button>
+      <button type="button" role="tab" aria-selected="false" data-panel="exp-confidence">Confidence</button>
+      <button type="button" role="tab" aria-selected="false" data-panel="exp-pruning">Pruning</button>
+      <button type="button" role="tab" aria-selected="false" data-panel="exp-scalability">Scalability</button>
+    </div>
+
+    <div id="exp-support" role="tabpanel" class="tabpanel">
+      <p class="finding" id="finding-support"></p>
+      <div class="charts three">
+        <figure><div class="chart-box"><canvas id="chart-support-itemsets"></canvas></div><figcaption><b>Fig. 1</b> Frequent itemsets by size (log scale)</figcaption></figure>
+        <figure><div class="chart-box"><canvas id="chart-support-candidates"></canvas></div><figcaption><b>Fig. 2</b> Candidate itemsets, k ≥ 2 (log scale)</figcaption></figure>
+        <figure><div class="chart-box"><canvas id="chart-support-time"></canvas></div><figcaption><b>Fig. 3</b> Execution time (median of 3 runs)</figcaption></figure>
+      </div>
+      <div class="table-wrap"><table id="table-support" class="data"></table></div>
+    </div>
+
+    <div id="exp-confidence" role="tabpanel" class="tabpanel" hidden>
+      <p class="finding" id="finding-confidence"></p>
+      <div class="charts two">
+        <figure><div class="chart-box"><canvas id="chart-confidence"></canvas></div><figcaption><b>Fig. 4</b> Number of rules vs minimum confidence (support 1%)</figcaption></figure>
+        <figure><div class="chart-box"><canvas id="chart-confidence-avg"></canvas></div><figcaption>Average confidence of the accepted rules</figcaption></figure>
+      </div>
+      <div class="table-wrap"><table id="table-confidence" class="data"></table></div>
+    </div>
+
+    <div id="exp-pruning" role="tabpanel" class="tabpanel" hidden>
+      <p class="finding" id="finding-pruning"></p>
+      <div class="charts two">
+        <figure><div class="chart-box"><canvas id="chart-pruning"></canvas></div><figcaption><b>Fig. 5</b> Candidates per level before/after pruning (support 1%, log scale)</figcaption></figure>
+        <figure><div class="chart-box"><canvas id="chart-pruning-pct"></canvas></div><figcaption>Share of joined candidates removed by the subset check</figcaption></figure>
+      </div>
+      <div class="table-wrap"><table id="table-pruning" class="data"></table></div>
+    </div>
+
+    <div id="exp-scalability" role="tabpanel" class="tabpanel" hidden>
+      <p class="finding" id="finding-scalability"></p>
+      <div class="charts two">
+        <figure><div class="chart-box"><canvas id="chart-scalability"></canvas></div><figcaption><b>Fig. 6</b> Execution time vs number of transactions (support 1%)</figcaption></figure>
+        <figure><div class="chart-box"><canvas id="chart-scalability-rate"></canvas></div><figcaption>Cost per 1,000 baskets</figcaption></figure>
+      </div>
+      <div class="table-wrap"><table id="table-scalability" class="data"></table></div>
+    </div>
+  </section>
+
+  <!-- ============ 4. Algorithm explanation ============ -->
+  <section id="algorithm" class="panel">
+    <div class="panel-head">
+      <span class="step-no">4</span>
+      <div>
+        <h2>How the Apriori algorithm works</h2>
+        <p class="muted">The same steps are implemented in <code>src/apriori.py</code> and <code>src/association_rules.py</code>.</p>
+      </div>
+    </div>
+
+    <ol class="stepper">
+      <li><b>Pass 1: count items.</b> Keep items with count ≥ ⌈s·N⌉ → <span class="sym">L<sub>1</sub></span></li>
+      <li><b>Join.</b> Combine itemsets of L<sub>k-1</sub> sharing their first k−2 items: {A,B} + {A,C} → {A,B,C} → <span class="sym">C<sub>k</sub></span></li>
+      <li><b>Prune.</b> Drop a candidate if any (k−1)-subset is not in L<sub>k-1</sub>. It cannot be frequent (monotonicity).</li>
+      <li><b>Count.</b> One scan of the baskets counts the surviving candidates.</li>
+      <li><b>Filter.</b> Keep candidates with count ≥ ⌈s·N⌉ → <span class="sym">L<sub>k</sub></span>. Repeat until L<sub>k</sub> is empty.</li>
+      <li><b>Rules.</b> For every frequent I and non-empty X ⊂ I, output X → I∖X when its confidence ≥ c.</li>
+    </ol>
+
+    <div class="formulas">
+      <div class="formula">
+        <h3>Support</h3>
+        <p class="eq">support(I) = <span class="frac"><span>baskets containing I</span><span>all baskets N</span></span></p>
+        <p class="muted small">An itemset is <em>frequent</em> when support(I) ≥ s.</p>
+      </div>
+      <div class="formula">
+        <h3>Confidence</h3>
+        <p class="eq">conf(X → Y) = <span class="frac"><span>support(X ∪ Y)</span><span>support(X)</span></span></p>
+        <p class="muted small">Estimated P(Y | X); not symmetric.</p>
+      </div>
+      <div class="formula">
+        <h3>Lift</h3>
+        <p class="eq">lift(X → Y) = <span class="frac"><span>conf(X → Y)</span><span>support(Y)</span></span></p>
+        <p class="muted small">&gt; 1: bought together more often than chance. Association, not causation.</p>
+      </div>
+      <div class="formula">
+        <h3>Monotonicity</h3>
+        <p class="eq">J ⊆ I ⇒ support(J) ≥ support(I)</p>
+        <p class="muted small">If {A,B} is infrequent, {A,B,C} cannot be frequent, so it is pruned without counting.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap muted small">
+    Data: D. Chen, “Online Retail,” UCI Machine Learning Repository, 2015, doi:10.24432/C5BW33 (CC BY 4.0).
+    Apriori implemented manually in Python; interface in HTML, CSS and vanilla JavaScript with Chart.js.
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
